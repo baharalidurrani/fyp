@@ -18,7 +18,7 @@ app.listen(port, () => {
 
 //connection with mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/authPassSession').then(() => {
+mongoose.connect('mongodb://localhost:27017/fypPractice').then(() => {
     console.log('Database Connnected');
 }).catch((err) => {
     console.log(err);

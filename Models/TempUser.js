@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var TempUserSchema = new Schema({
     _name: {
         type: String,
         trim: true
@@ -27,7 +27,7 @@ var UserSchema = new Schema({
     }
 });
 
-UserSchema.pre('save', function (next) {
+TempUserSchema.pre('save', function (next) {
     var user = this;
     if (!user.isModified('_password')) next();
 
@@ -37,13 +37,11 @@ UserSchema.pre('save', function (next) {
             user._password = hash;
             next();
 
-        })
-
+        });
     });
-
 });
 
-UserSchema.methods.comparePassword = function (temp_pass, callback) {
+TempUserSchema.methods.comparePassword = function (temp_pass, callback) {
     var user = this;
     bcrypt.compare(temp_pass, user._password, (err, Ismatch) => {
         if (err) {
@@ -56,5 +54,5 @@ UserSchema.methods.comparePassword = function (temp_pass, callback) {
 
     });
 }
-var UserModel = mongoose.model('User', UserSchema);
-module.exports = UserModel;
+var TempUserModel = mongoose.model('TempUser', TempUserSchema);
+module.exports = TempUserModel;
