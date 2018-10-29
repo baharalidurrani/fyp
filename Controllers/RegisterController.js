@@ -5,27 +5,33 @@ exports.get = (req, res) => {
     res.render('Register');
 }
 exports.post = (req, res) => {
-    var user = new UserModel({
+    console.log(req.body);
 
+    var userModel = new UserModel({
         _name: req.body.NAME,
         _email: req.body.EMAIL,
         _password: req.body.PASS,
         _gender: req.body.GENDER,
         _type: req.body.TYPE
     });
-
-    if (user._type === "reviewer") {
-        console.log("New user in TempUser need to approved");
-        var tempUser = new TempUserModel({
-            _name: user._name,
-            _email: user._email,
-            _password: user._password,
-            _gender: user._gender,
-            _type: user._type
+    console.log(userModel);
+    if (userModel._type === "reviewer") {
+        var tempUserModel = new TempUserModel({
+            _id: userModel._id,
+            _name: userModel._name,
+            _email: userModel._email,
+            _password: userModel._password,
+            _gender: userModel._gender,
+            _type: userModel._type
         });
-        tempUser.save().then(() => res.redirect('/')).catch((err) => res.redirect('/login'));
-
+        tempUserModel.save().then((temp) => {
+            console.log(temp);
+            res.redirect('/')
+        }).catch((err) => res.redirect('/login'));
     } else {
-        user.save().then(() => res.redirect('/')).catch((err) => res.redirect('/login'));
+        userModel.save().then((temp) => {
+            console.log(temp);
+            res.redirect('/')
+        }).catch((err) => res.redirect('/login'));
     }
 }
