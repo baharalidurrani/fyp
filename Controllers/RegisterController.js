@@ -14,9 +14,8 @@ exports.post = (req, res) => {
         _gender: req.body.GENDER,
         _type: req.body.TYPE
     });
-    console.log(userModel);
     if (userModel._type === "reviewer") {
-        var tempUserModel = new TempUserModel({
+        var tempUserModel = new TempsUerModel({
             _id: userModel._id,
             _name: userModel._name,
             _email: userModel._email,
