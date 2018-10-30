@@ -7,6 +7,8 @@ const Register = require('../Controllers/RegisterController');
 const Home = require('../Controllers/HomeController');
 const Profile = require('../Controllers/ProfileController');
 const Logout = require('../Controllers/LogoutController');
+const Repo = require('../Controllers/RepoController');
+
 const Auth = require('../Middleware/passport_auth');
 
 module.exports = Router;
@@ -32,3 +34,5 @@ Router.get('/logout', Logout);
 
 Router.get('/edit', Auth.islogin, Profile.edit);
 Router.post('/edit', Auth.islogin, Profile.update);
+
+Router.get('/repo', Auth.islogin, Repo.get);

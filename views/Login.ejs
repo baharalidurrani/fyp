@@ -14,19 +14,18 @@
         <div class="row">
             <div class="col s12 m8 l6 push-m2 push-l3">
                 <div class="card-panel hoverable">
-                    <form action="/profile" method="post">
+                    <form method="POST" action="/login">
                         <div class="input-field">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" name="EMAIL" type="email" class="validate">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field">
-                            <input id="password" type="password" class="validate">
+                            <input id="password" name="PASS" type="password" class="validate">
                             <label for="password">Password</label>
                         </div>
                         <div class="center">
-                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Author</a>
-                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Reviewer</a>
-                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Editor</a>
+                            <button class="btn waves-effect waves-light themeAccent btn-small marginAll" type="submit"
+                                name="action">Login</button>
                         </div>
                     </form>
                 </div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/edit">Edit</button>
+    </a>
+
+    <h1>Profile Page</h1>
+
+    <h3>Name:
+        <%=User._name %>
+    </h3>
+    <h3>Email:
+        <%=User._email %>
+    </h3>
+    <h3>Gender:
+        <%=User._gender %>
+    </h3>
+    <h3>You are
+        <i>"
+            <%=User._type%>"</i>
+    </h3>
+    <br>
+    <br>
+    <h3>Reviewers need to Approved:</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <% for(var i=0;i<TempUsers.length;i++){%>
+            <tr>
+                <td>
+                    <%=TempUsers[i]._name%>
+                </td>
+                <td>
+                    <%=TempUsers[i]._email%>
+                </td>
+                <td>
+                    <form action="/profile" method="POST">
+                        <button type="submit" name="ID" value="<%=TempUsers[i]._id%>">Approve Reviewer</button>
+                    </form>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <br>
+    <br>
+    <% include ./Layout/Header.ejs %>
+</body>
+
+</html>
