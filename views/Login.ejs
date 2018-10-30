@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <% include ./Layout/Head.ejs %>
 </head>
 
 <body>
-    <h1>Login page </h1>
-    <form method="POST" action="/login">
+    <% include ./Layout/Navbar.ejs %>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <label>Email</label>
-        <input type="text" name="EMAIL" />
-        <br>
-        <label>Password</label>
-        <input type="password" name="PASS" />
-        <br>
-        <input type="submit" value="Login">
-    </form>
     <br>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 l6 push-m2 push-l3">
+                <div class="card-panel hoverable">
+                    <form action="/profile" method="post">
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="center">
+                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Author</a>
+                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Reviewer</a>
+                            <a class="waves-effect waves-light themeAccent btn-small marginAll">Editor</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <a class="waves-effect waves-light themeAccent btn-small marginAll">Forgot?</a>
+            <a href="/register" class="waves-effect waves-light themeAccent btn-small marginAll">Register</a>
+        </div>
+    </div>
     <br>
-    <% include ./Layout/Header.ejs %>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/Footer.ejs %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
 </body>
 
 </html>

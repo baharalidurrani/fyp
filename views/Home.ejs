@@ -1,16 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <% include ./Layout/Head.ejs %>
 </head>
 
 <body>
-    <h1>Home page</h1>
-    <% include ./Layout/Header.ejs %>
+    <% include ./Layout/Navbar.ejs %>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <div class="container">
+        <h3 class="title center">Up Comming Conference</h3>
+        <p class="flow-text center"><i class="material-icons">date_range</i> Monday, December 31st, 2018</p>
+        <p class="flow-text center"><i class="material-icons">location_on</i> Quaid-e-Azam Auditorium</p>
+        <div class="center"> <a href="/register" class="waves-effect waves-light btn themeAccent pulse">Register
+                Now</a>
+        </div>
+    </div>
+
+    <h3 class="themePrimary textPrimary center">Recent Publications</h3>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-content textDark">
+                        <span class="card-title"><a target="_blank" href="https://material.io/" class="textDark">Material
+                                Design</a></span>
+                        <p>Material Design is a visual language that synthesizes the classic principles of good design
+                            with the innovation of technology and science. Material Design is inspired by the physical
+                            world and its textures, including how they reflect light and cast shadows. Material
+                            surfaces reimagine the mediums of paper and ink.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="row">
+                            <a target="_blank" href="https://material.io/" class="col textDark">Read More</a>
+                            <span class="col textDark">|</span>
+                            <a target="_blank" href="https://design.google/" class="col textDark">Google</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-content textDark">
+                        <span class="card-title"><a target="_blank" href="https://www.gnu.org/home.en.html" class="textDark">The
+                                GNU
+                                System</a></span>
+                        <p>GNU is an operating system that is free software—that is, it respects users' freedom. The
+                            GNU operating system consists of GNU packages (programs specifically released by the GNU
+                            Project) as well as free software released by third parties. The development of GNU made it
+                            possible to use a computer without software that would trample your freedom.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="row">
+                            <a target="_blank" href="https://www.gnu.org/home.en.html" class="textDark col">Read
+                                More</a>
+                            <span class="col textDark">|</span>
+                            <a target="_blank" href="https://www.gnu.org/philosophy/free-sw.html" class="textDark col">Freedom</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-content textDark">
+                        <span class="card-title"><a target="_blank" href="https://justgetflux.com/research.html" class="textDark">f.lux</a></span>
+                        <p>f.lux is a cross-platform computer program that adjusts a display's color temperature
+                            according to location and time of day, offering functional respite for the eyes. The
+                            program is designed to reduce eye strain during night-time use, helping to reduce
+                            disruption of sleep patterns.</p>
+                    </div>
+                    <div class="card-action">
+                        <div class="row">
+                            <a target="_blank" href="https://justgetflux.com/research.html" class="col textDark">Read
+                                More</a>
+                            <span class="col textDark">|</span>
+                            <a target="_blank" href="https://en.wikipedia.org/wiki/Eye_strain" class="col textDark">Eye
+                                Strain</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/Footer.ejs %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
 </body>
 
 </html>

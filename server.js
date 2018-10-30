@@ -27,6 +27,9 @@ mongoose.connect('mongodb://localhost:27017/fypPractice').then(() => {
 //setting template engine
 app.set('view engine', 'ejs');
 
+//static files
+app.use(express.static('./views/assets'));
+
 //middleware
 app.use(body_parser.urlencoded({
     extended: false

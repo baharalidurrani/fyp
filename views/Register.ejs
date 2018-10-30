@@ -1,46 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <% include ./Layout/Head.ejs %>
 </head>
 
 <body>
-    <h1>Register Page</h1>
-    <form method="POST" action="/register">
-        <label>Name</label>
-        <input type="text" name="NAME" />
-        <br>
-        <br>
-        <label>Gender : </label>
-        <input type="radio" value="Male" name="GENDER" checked>
-        <label>Male</label>
-        <input type="radio" value="Female" name="GENDER">
-        <label>Female</label>
-        <input type="radio" value="Other" name="GENDER">
-        <label>Other</label>
-        <br>
-        <label>User Type</label>
-        <input type="radio" name="TYPE" value="author" checked> Author
-        <input type="radio" name="TYPE" value="reviewer"> Reviewer
-        <br>
-        <br>
-        <label>Email</label>
-        <input type="text" name="EMAIL" />
-        <br>
-        <br>
-        <label>Password</label>
-        <input type="password" name="PASS" />
-        <br>
-        <br>
-        <input type="submit" value="Register">
-    </form>
+    <% include ./Layout/Navbar.ejs %>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <br>
-    <br>
-    <% include ./Layout/Header.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 l6 push-m2 push-l3">
+                <div class="card-panel hoverable">
+                    <form action="/profile" method="post">
+                        <div class="input-field">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">Full Name</label>
+                        </div>
+                        <div>
+                            <span>Gender:</span><br><br>
+                            <label class="marginAll">
+                                <input name="group1" type="radio" checked="checked" />
+                                <span>Male</span>
+                            </label>
+                            <label class="marginAll">
+                                <input name="group1" type="radio" />
+                                <span>Female</span>
+                            </label>
+                            <label class="marginAll">
+                                <input name="group1" type="radio" />
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                        <div>
+                            <span>Register as: (Choose at least one)</span><br><br>
+                            <label class="marginAll">
+                                <input type="checkbox" checked="checked" />
+                                <span>Author</span>
+                            </label>
+                            <label class="marginAll">
+                                <input type="checkbox" />
+                                <span>Reviewer</span>
+                            </label>
+                            <label class="marginAll">
+                                <input type="checkbox" />
+                                <span>Editor</span>
+                            </label>
+                        </div>
+                        <br>
+                        <a class="waves-effect waves-light themeAccent btn-small marginAll">Register</a>
+                        <a href="/login" class="waves-effect waves-light themeAccent btn-small right marginAll">Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/Footer.ejs %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
 </body>
 
 </html>

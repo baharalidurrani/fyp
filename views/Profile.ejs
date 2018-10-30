@@ -1,35 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <% include ./Layout/Head.ejs %>
 </head>
 
 <body>
-    <a href="/edit">Edit</button>
-    </a>
+    <% include ./Layout/Navbar.ejs %>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    <h1>Profile Page</h1>
+    <br>
+    <div class="container">
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title center">Bahar Ali Durrani</span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+                <span>Email:</span><span class="right">baharalidurrani@gmail.com</span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+                <span>Gender:</span><span class="right">Male</span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+                <span>Approved Roles:</span><br>
+                <span class="right">
+                    <label class="marginAll">
+                        <input type="checkbox" checked="checked" disabled="disabled" />
+                        <span>Author</span>
+                    </label>
+                    <label class="marginAll">
+                        <input type="checkbox" checked="checked" disabled="disabled" />
+                        <span>Reviewer</span>
+                    </label>
+                    <label class="marginAll">
+                        <input type="checkbox" disabled="disabled" />
+                        <span>Editor</span>
+                    </label>
+                </span>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h3 class="themePrimary textPrimary center">Users Approval</h3>
+    <div class="container">
+        <ul class="collapsible collapsible popout">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers<span class="new badge">4</span></div>
+                <div class="collapsible-body">
+                    <table class="striped centered">
+                        <tbody>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">people</i>Editors<span class="new badge">2</span></div>
+                <div class="collapsible-body">
+                    <table class="striped centered">
+                        <tbody>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                            <tr>
+                                <td>Nameera</td>
+                                <td>nameera@gmail.com</td>
+                                <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-    <h3>Name:
-        <%=User._name %>
-    </h3>
-    <h3>Email:
-        <%=User._email %>
-    </h3>
-    <h3>Gender:
-        <%=User._gender %>
-    </h3>
-    <h3>You are
-        <i>"
-            <%=User._type%>"</i>
-    </h3>
-    <br>
-    <br>
-    <% include ./Layout/Header.ejs %>
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/Footer.ejs %>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
 </body>
 
 </html>

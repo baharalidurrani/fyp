@@ -1,0 +1,59 @@
+<nav class="themePrimary">
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="https://baharalidurrani.gitlab.io/fyp/">
+                <img src="/img/cms.svg" alt="" height="100%" class="brand-logo">
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="./">Home</a></li>
+                <li><a href="./repo">Research Submitted/Received</a></li>
+                <li><a href="./login">Login</a></li>
+                <li><a href="./register">Register</a></li>
+                <li><a href="./profile">Profile</a></li>
+                <li><a class="dropdown-trigger" data-target="dropdown1">
+                        <i class="material-icons right">format_color_fill</i></a>
+                </li>
+                <!-- Dropdown Structure -->
+                <ul id="dropdown1" class="dropdown-content">
+                    <li onclick="changeTheme('#ee6e73')" class="red lighten-2"></li>
+                    <li onclick="changeTheme('#4caf50')" class="green"></li>
+                    <li onclick="changeTheme('#e91e63')" class="pink"></li>
+                    <li onclick="changeTheme('#2196f3')" class="blue"></li>
+                    <li onclick="changeTheme('#9c27b0')" class="purple"></li>
+                    <li onclick="changeTheme('#009688')" class="teal"></li>
+                    <li onclick="changeTheme('#3f51b5')" class="indigo"></li>
+                    <li onclick="changeTheme('#607d8b')" class="blue-grey"></li>
+                    <li onclick="changeTheme('#00bcd4')" class="cyan"></li>
+                    <li onclick="changeTheme('#f44336')" class="red"></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <ul class="sidenav" id="mobile-demo">
+        <li><a class="center" href="https://baharalidurrani.gitlab.io/fyp/">
+                <img src="/img/cms.svg" alt="" height="100%" class="brand-logo">
+            </a></li>
+        <div class="divider"></div>
+        <li><a class="waves-effect waves-teal" href="./">Home</a></li>
+        <li><a class="waves-effect waves-teal" href="./repo">Research Submitted/Received</a></li>
+        <li><a class="waves-effect waves-teal" href="./login">Login</a></li>
+        <li><a class="waves-effect waves-teal" href="./register">Register</a></li>
+        <li><a class="waves-effect waves-teal" href="./profile">Profile</a></li>
+        <li><a onclick="changeTheme('#ee6e73')" class="btn red lighten-2 z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#4caf50')" class="btn green z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#e91e63')" class="btn pink z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#2196f3')" class="btn blue z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#9c27b0')" class="btn purple z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#009688')" class="btn teal z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#3f51b5')" class="btn indigo z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#607d8b')" class="btn blue-grey z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#00bcd4')" class="btn cyan z-depth-0"></a></li>
+        <li><a onclick="changeTheme('#f44336')" class="btn red z-depth-0"></a></li>
+    </ul>
+</div>
