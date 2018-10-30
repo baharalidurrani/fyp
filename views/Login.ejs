@@ -24,8 +24,19 @@
                             <label for="password">Password</label>
                         </div>
                         <div class="center">
-                            <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll" type="submit"
-                                name="action">Login</button>
+                            <!-- Modal Trigger -->
+                            <button href="#modal1" class="modal-trigger btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
+                                type="submit" name="action">Login</button>
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal themePrimary">
+                                <div class="modal-content">
+                                    <h6 class="textPrimary">Login As?</h6>
+                                    <br>
+                                    <button type="submit" name="AS" value="author" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Author</button>
+                                    <button type="submit" name="AS" value="reviewer" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Reviewer</button>
+                                    <button type="submit" name="AS" value="editor" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Editor</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
