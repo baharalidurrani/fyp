@@ -14,32 +14,32 @@
         <div class="row">
             <div class="col s12 m8 l6 push-m2 push-l3">
                 <div class="card-panel hoverable">
-                    <form action="/profile" method="post">
+                    <form method="POST" action="/register">
                         <div class="input-field">
-                            <input id="first_name" type="text" class="validate">
+                            <input id="first_name" type="text" class="validate" name="NAME" required="" aria-required="true">
                             <label for="first_name">Full Name</label>
                         </div>
                         <div>
                             <span>Gender:</span><br><br>
                             <label class="marginAll">
-                                <input name="group1" type="radio" checked="checked" />
+                                <input type="radio" value="Male" name="GENDER" checked="checked">
                                 <span>Male</span>
                             </label>
                             <label class="marginAll">
-                                <input name="group1" type="radio" />
+                                <input type="radio" value="Female" name="GENDER">
                                 <span>Female</span>
                             </label>
                             <label class="marginAll">
-                                <input name="group1" type="radio" />
+                                <input type="radio" value="Other" name="GENDER">
                                 <span>Other</span>
                             </label>
                         </div>
                         <div class="input-field">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" type="email" class="validate" name="EMAIL" required="" aria-required="true">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field">
-                            <input id="password" type="password" class="validate">
+                            <input id="password" type="password" class="validate" name="PASS" required="" aria-required="true">
                             <label for="password">Password</label>
                         </div>
                         <div>
@@ -58,7 +58,9 @@
                             </label>
                         </div>
                         <br>
-                        <a class="waves-effect waves-light themeAccent btn-small marginAll z-depth-0">Register</a>
+                        <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll" type="submit"
+                            name="action">Register</button>
+                        <!-- <a class="waves-effect waves-light themeAccent btn-small marginAll z-depth-0">Register</a> -->
                         <a href="/login" class="waves-effect waves-light themeAccent btn-small right marginAll z-depth-0">Login</a>
                     </form>
                 </div>
