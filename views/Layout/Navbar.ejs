@@ -10,9 +10,17 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="./">Home</a></li>
                 <li><a href="./repo">Research Submitted/Received</a></li>
+
+                <% if(!person) { %>
                 <li><a href="./login">Login</a></li>
                 <li><a href="./register">Register</a></li>
-                <li><a href="./profile">Profile</a></li>
+                <% } else { %>
+                <li><a href="./profile">
+                        <%= person._name %></a></li>
+
+                <li><a href="/logout">logout</a></li>
+                <% } %>
+
                 <li><a class="dropdown-trigger" data-target="dropdown1">
                         <i class="material-icons right">format_color_fill</i></a>
                 </li>
@@ -42,9 +50,16 @@
         <div class="divider"></div>
         <li><a class="waves-effect waves-teal" href="./">Home</a></li>
         <li><a class="waves-effect waves-teal" href="./repo">Research Submitted/Received</a></li>
+
+        <% if(!person) { %>
         <li><a class="waves-effect waves-teal" href="./login">Login</a></li>
         <li><a class="waves-effect waves-teal" href="./register">Register</a></li>
-        <li><a class="waves-effect waves-teal" href="./profile">Profile</a></li>
+        <% } else { %>
+        <li><a class="waves-effect waves-teal" href="./profile">
+                <%= person._name %></a></li>
+        <li><a class="waves-effect waves-teal" href="/logout">logout</a></li>
+        <% } %>
+
         <li><a onclick="changeTheme('#ee6e73')" class="btn red lighten-2 z-depth-0"></a></li>
         <li><a onclick="changeTheme('#4caf50')" class="btn green z-depth-0"></a></li>
         <li><a onclick="changeTheme('#e91e63')" class="btn pink z-depth-0"></a></li>
