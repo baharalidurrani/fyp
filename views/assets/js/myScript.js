@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('.collapsible').collapsible();
+    $('.modal').modal();
     if (typeof (Storage) !== "undefined") {
         var colorArgs;
         if (colorArgs = localStorage.getItem("lastTheme"))
