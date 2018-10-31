@@ -8,6 +8,7 @@ const Home = require('../Controllers/HomeController');
 const Profile = require('../Controllers/ProfileController');
 const Logout = require('../Controllers/LogoutController');
 const Repo = require('../Controllers/RepoController');
+const Paper = require('../Controllers/PaperController');
 
 const Auth = require('../Middleware/passport_auth');
 
@@ -36,3 +37,4 @@ Router.get('/edit', Auth.islogin, Profile.edit);
 Router.post('/edit', Auth.islogin, Profile.update);
 
 Router.get('/repo', Auth.islogin, Repo.get);
+Router.get('/paper', Auth.islogin, Paper.get);

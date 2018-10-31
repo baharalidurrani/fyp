@@ -1,4 +1,3 @@
-module.exports=(req,res)=>
-{
+exports.get = (req, res) => {
     res.render('Paper');
 }
