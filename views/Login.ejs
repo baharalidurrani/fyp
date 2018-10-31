@@ -6,51 +6,55 @@
 </head>
 
 <body>
-    <% include ./Layout/Navbar.ejs %>
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div id="root" class="gee6e73">
 
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m8 l6 push-m2 push-l3">
-                <div class="card-panel hoverable">
-                    <form method="POST" action="/login">
-                        <div class="input-field">
-                            <input id="email" name="EMAIL" type="email" class="validate" required="" aria-required="true">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="password" name="PASS" type="password" class="validate" required="" aria-required="true">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="center">
-                            <!-- Modal Trigger -->
-                            <button href="#modal1" class="modal-trigger btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
-                                type="submit" name="action">Login</button>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal themePrimary">
-                                <div class="modal-content">
-                                    <h6 class="textPrimary">Login As?</h6>
-                                    <br>
-                                    <button type="submit" name="AS" value="author" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Author</button>
-                                    <button type="submit" name="AS" value="reviewer" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Reviewer</button>
-                                    <button type="submit" name="AS" value="editor" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Editor</button>
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 l6 push-m2 push-l3">
+                    <div class="card-panel hoverable">
+                        <form method="POST" action="/login">
+                            <div class="input-field">
+                                <input id="email" name="EMAIL" type="email" class="validate" required="" aria-required="true">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" name="PASS" type="password" class="validate" required=""
+                                    aria-required="true">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="center">
+                                <!-- Modal Trigger -->
+                                <button href="#modal1" class="modal-trigger btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
+                                    type="submit" name="action">Login</button>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal themePrimary">
+                                    <div class="modal-content">
+                                        <h6 class="textPrimary">Login As?</h6>
+                                        <br>
+                                        <button type="submit" name="AS" value="author" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Author</button>
+                                        <button type="submit" name="AS" value="reviewer" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Reviewer</button>
+                                        <button type="submit" name="AS" value="editor" class="modal-close themePrimary textPrimary z-depth-0 waves-effect waves-light btn-large btn-flat marginAll">Editor</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+            <div class="center">
+                <a class="waves-effect waves-light themeAccent btn-small marginAll">Forgot?</a>
+                <a href="/register" class="waves-effect waves-light themeAccent btn-small marginAll">Register</a>
+            </div>
         </div>
-        <div class="center">
-            <a class="waves-effect waves-light themeAccent btn-small marginAll">Forgot?</a>
-            <a href="/register" class="waves-effect waves-light themeAccent btn-small marginAll">Register</a>
-        </div>
-    </div>
-    <br>
+        <br>
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <% include ./Layout/Footer.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
     <!-- //////////////////////////////////////////////////////////////////////////////////// -->
     <% include ./Layout/ScriptTag.ejs %>
 
