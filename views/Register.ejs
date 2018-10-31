@@ -6,70 +6,75 @@
 </head>
 
 <body>
-    <% include ./Layout/Navbar.ejs %>
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div id="root" class="gee6e73">
 
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m8 l6 push-m2 push-l3">
-                <div class="card-panel hoverable">
-                    <form method="POST" action="/register">
-                        <div class="input-field">
-                            <input id="first_name" type="text" class="validate" name="NAME" required="" aria-required="true">
-                            <label for="first_name">Full Name</label>
-                        </div>
-                        <div>
-                            <span>Gender:</span><br><br>
-                            <label class="marginAll">
-                                <input type="radio" value="Male" name="GENDER" checked="checked">
-                                <span>Male</span>
-                            </label>
-                            <label class="marginAll">
-                                <input type="radio" value="Female" name="GENDER">
-                                <span>Female</span>
-                            </label>
-                            <label class="marginAll">
-                                <input type="radio" value="Other" name="GENDER">
-                                <span>Other</span>
-                            </label>
-                        </div>
-                        <div class="input-field">
-                            <input id="email" type="email" class="validate" name="EMAIL" required="" aria-required="true">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="password" type="password" class="validate" name="PASS" required="" aria-required="true">
-                            <label for="password">Password</label>
-                        </div>
-                        <div>
-                            <span>Register as: (Choose at least one)</span><br><br>
-                            <label class="marginAll">
-                                <input name="AS" value="author" type="checkbox" checked="checked" />
-                                <span>Author</span>
-                            </label>
-                            <label class="marginAll">
-                                <input name="AS" value="reviwer" type="checkbox" />
-                                <span>Reviewer</span>
-                            </label>
-                            <label class="marginAll">
-                                <input name="AS" value="editor" type="checkbox" />
-                                <span>Editor</span>
-                            </label>
-                        </div>
-                        <br>
-                        <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll" type="submit"
-                            name="action">Register</button>
-                        <!-- <a class="waves-effect waves-light themeAccent btn-small marginAll z-depth-0">Register</a> -->
-                        <a href="/login" class="waves-effect waves-light themeAccent btn-small right marginAll z-depth-0">Login</a>
-                    </form>
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 l6 push-m2 push-l3">
+                    <div class="card-panel hoverable">
+                        <form method="POST" action="/register">
+                            <div class="input-field">
+                                <input id="first_name" type="text" class="validate" name="NAME" required=""
+                                    aria-required="true">
+                                <label for="first_name">Full Name</label>
+                            </div>
+                            <div>
+                                <span>Gender:</span><br><br>
+                                <label class="marginAll">
+                                    <input type="radio" value="Male" name="GENDER" checked="checked">
+                                    <span>Male</span>
+                                </label>
+                                <label class="marginAll">
+                                    <input type="radio" value="Female" name="GENDER">
+                                    <span>Female</span>
+                                </label>
+                                <label class="marginAll">
+                                    <input type="radio" value="Other" name="GENDER">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                            <div class="input-field">
+                                <input id="email" type="email" class="validate" name="EMAIL" required="" aria-required="true">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" type="password" class="validate" name="PASS" required=""
+                                    aria-required="true">
+                                <label for="password">Password</label>
+                            </div>
+                            <div>
+                                <span>Register as: (Choose at least one)</span><br><br>
+                                <label class="marginAll">
+                                    <input name="AS" value="author" type="checkbox" checked="checked" />
+                                    <span>Author</span>
+                                </label>
+                                <label class="marginAll">
+                                    <input name="AS" value="reviwer" type="checkbox" />
+                                    <span>Reviewer</span>
+                                </label>
+                                <label class="marginAll">
+                                    <input name="AS" value="editor" type="checkbox" />
+                                    <span>Editor</span>
+                                </label>
+                            </div>
+                            <br>
+                            <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll" type="submit"
+                                name="action">Register</button>
+                            <!-- <a class="waves-effect waves-light themeAccent btn-small marginAll z-depth-0">Register</a> -->
+                            <a href="/login" class="waves-effect waves-light themeAccent btn-small right marginAll z-depth-0">Login</a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <% include ./Layout/Footer.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
     <!-- //////////////////////////////////////////////////////////////////////////////////// -->
     <% include ./Layout/ScriptTag.ejs %>
 
