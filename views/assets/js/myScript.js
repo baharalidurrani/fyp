@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
-    $(".dropdown-trigger").dropdown();
+    $('.dropdown-trigger').dropdown();
     $('.collapsible').collapsible();
     $('.modal').modal();
     if (typeof (Storage) !== "undefined") {
@@ -33,4 +33,8 @@ function changeTheme(colorArgs) {
     } else {
         console.log("localstorage not available");
     }
+
+    //for changing backround gradient
+    var color = colorArgs.replace('#', 'g');
+    $("#root").attr('class', color);
 }
