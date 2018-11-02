@@ -53,7 +53,7 @@ UserSchema.methods.comparePassword = function (temp_pass, callback) {
 
         console.log(Ismatch);
         callback(null, Ismatch);
-
+        console.log(user._name + " logged in");
     });
 }
 var UserModel = mongoose.model('User', UserSchema);
