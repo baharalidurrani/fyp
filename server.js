@@ -8,7 +8,7 @@ require('./config/passport_config');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const URI = process.env.MLAB;
+const URI = process.env.MLAB || 'mongodb://localhost:27017/fypPractice';
 
 //server listing on port 3000
 app.listen(port, () => {
