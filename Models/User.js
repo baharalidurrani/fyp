@@ -22,8 +22,14 @@ var UserSchema = new Schema({
     _gender: {
         type: String
     },
-    _type: {
+    _loggedAs: {
         type: String
+    },
+    _rolesDemanded: {
+        type: [String]
+    },
+    _rolesApproved: {
+        type: [String]
     }
 });
 

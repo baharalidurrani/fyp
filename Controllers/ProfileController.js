@@ -1,11 +1,13 @@
 const UserModel = require('../Models/User');
-const TempUserModel = require('../Models/TempUser');
 
 exports.display = (req, res) => {
 
-    if (req.user._type === "admin") {
-        TempUserModel.find().then((tempUsers) => {
-            console.log(tempUsers);
+    if (req.user._loggedAs === "admin") {
+        UserModel.find({
+            _rolesDemanded: {
+                $ne: null
+            }
+        }).then((tempUsers) => {
             res.render('ProfileAdmin', {
                 TempUsers: tempUsers,
                 User: req.user
@@ -19,27 +21,28 @@ exports.display = (req, res) => {
 }
 
 exports.approveUser = (req, res) => {
-    TempUserModel.findById({
-        _id: req.body.ID
-    }).then((temp) => {
-        var userModel = new UserModel({
-            _id: temp._id,
-            _name: temp._name,
-            _email: temp._email,
-            _password: temp._password,
-            _gender: temp._gender,
-            _type: temp._type
-        });
-        userModel.save().then(() => {
-            console.log(req.body.ID);
-            TempUserModel.findByIdAndRemove(req.body.ID,
-                function (err, data) {
-                    if (!err) {
-                        console.log("temp user deleted");
-                        console.log(data);
-                        res.redirect('/');
-                    }
-                });
+    var id = req.body.data;
+    var role;
+
+    if (id.includes("editor-")) {
+        role = "editor";
+        id = id.replace('editor-', '');
+    } else {
+        role = "reviewer";
+        id = id.replace('reviewer-', '');
+    }
+
+    UserModel.findById(id).then((user) => {
+        var rolesDemanded = user._rolesDemanded;
+        var rolesApproved = user._rolesApproved;
+        rolesDemanded.splice(rolesDemanded.indexOf(role), 1);
+        rolesApproved.push(role);
+        UserModel.findByIdAndUpdate(id, {
+            _rolesDemanded: rolesDemanded,
+            _rolesApproved: rolesApproved
+        }).then((uUser) => {
+            console.log('roles updated for "' + user._name + '" by "' + req.user._name + '"');
+            res.redirect('/profile');
         });
     });
 }

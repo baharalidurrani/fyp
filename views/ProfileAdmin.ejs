@@ -55,12 +55,12 @@
         <div class="container">
             <ul class="collapsible collapsible popout">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers<span class="new badge">
-                            <%=TempUsers.length;%></span></div>
+                    <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers</div>
                     <div class="collapsible-body">
                         <table class="striped centered">
                             <tbody>
                                 <% for(var i=0;i<TempUsers.length;i++){%>
+                                <% if(TempUsers[i]._rolesDemanded.indexOf('reviewer')>-1){%>
                                 <tr>
                                     <td>
                                         <%=TempUsers[i]._name%>
@@ -71,30 +71,39 @@
                                     <td>
                                         <form action="/profile" method="POST">
                                             <button class="btn waves-effect waves-light themeAccent btn-small marginAll"
-                                                type="submit" name="ID" value="<%=TempUsers[i]._id%>">Approve</button>
+                                                type="submit" name="data" value="<%='reviewer-'+TempUsers[i]._id%>">Approve</button>
                                         </form>
                                     </td>
                                 </tr>
+                                <%}%>
                                 <%}%>
                             </tbody>
                         </table>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">people</i>Editors<span class="new badge">2</span></div>
+                    <div class="collapsible-header"><i class="material-icons">people</i>Editors</div>
                     <div class="collapsible-body">
                         <table class="striped centered">
                             <tbody>
+                                <% for(var i=0;i<TempUsers.length;i++){%>
+                                <% if(TempUsers[i]._rolesDemanded.indexOf('editor')>-1){%>
                                 <tr>
-                                    <td>Nameera</td>
-                                    <td>nameera@gmail.com</td>
-                                    <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
+                                    <td>
+                                        <%=TempUsers[i]._name%>
+                                    </td>
+                                    <td>
+                                        <%=TempUsers[i]._email%>
+                                    </td>
+                                    <td>
+                                        <form action="/profile" method="POST">
+                                            <button class="btn waves-effect waves-light themeAccent btn-small marginAll"
+                                                type="submit" name="data" value="<%='editor-'+TempUsers[i]._id%>">Approve</button>
+                                        </form>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>Nameera</td>
-                                    <td>nameera@gmail.com</td>
-                                    <td><a href="" class="waves-effect waves-light btn">Approve</a></td>
-                                </tr>
+                                <%}%>
+                                <%}%>
                             </tbody>
                         </table>
                     </div>
