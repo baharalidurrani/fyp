@@ -11,7 +11,6 @@
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <br>
         <h4 class="themePrimary textPrimary center">Users Approval</h4>
 
         <div class="container">
@@ -20,7 +19,7 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers</div>
                     <div class="collapsible-body">
-                        <table class="striped centered">
+                        <table class="highlight">
                             <tbody>
                                 <% for(var i=0;i<TempUsers.length;i++){%>
                                 <% if(TempUsers[i]._rolesDemanded.indexOf('reviewer')>-1){%>
@@ -33,8 +32,8 @@
                                     </td>
                                     <td>
                                         <form action="/profile" method="POST">
-                                            <button class="btn waves-effect waves-light themeAccent btn-small marginAll"
-                                                type="submit" name="data" value="<%='reviewer-'+TempUsers[i]._id%>">Approve</button>
+                                            <button class="btn waves-effect waves-light themeAccent btn-small" type="submit"
+                                                name="data" value="<%='reviewer-'+TempUsers[i]._id%>">Approve</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -44,10 +43,11 @@
                         </table>
                     </div>
                 </li>
+                <div class="divider"></div>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">people</i>Editors</div>
                     <div class="collapsible-body">
-                        <table class="striped centered">
+                        <table class="highlight">
                             <tbody>
                                 <% for(var i=0;i<TempUsers.length;i++){%>
                                 <% if(TempUsers[i]._rolesDemanded.indexOf('editor')>-1){%>
@@ -60,8 +60,8 @@
                                     </td>
                                     <td>
                                         <form action="/profile" method="POST">
-                                            <button class="btn waves-effect waves-light themeAccent btn-small marginAll"
-                                                type="submit" name="data" value="<%='editor-'+TempUsers[i]._id%>">Approve</button>
+                                            <button class="btn waves-effect waves-light themeAccent btn-small" type="submit"
+                                                name="data" value="<%='editor-'+TempUsers[i]._id%>">Approve</button>
                                         </form>
                                     </td>
                                 </tr>
