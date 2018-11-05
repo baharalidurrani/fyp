@@ -2,7 +2,7 @@ const UserModel = require('../Models/User');
 
 exports.get = (req, res) => {
 
-    if (req.user._loggedAs === "admin") {
+    if (req.user._loggedAs === "editor") {
         UserModel.find({
             _rolesDemanded: {
                 $ne: null
