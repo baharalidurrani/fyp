@@ -20,43 +20,49 @@
                 <br>
             </div>
             <%}%>
-            <div class="card hoverable">
-                <div class="card-content">
-                    <span class="card-title">
-                        <%=User._name %> <a href="/edit" class="right waves-effect waves-light z-depth-0 btn-small"><i
-                                class="material-icons">edit</i></a></span>
-                </div>
-                <div class="divider"></div>
-                <div class="card-content">
-                    <span>Email:</span><span class="right">
-                        <%=User._email %></span>
-                </div>
-                <div class="divider"></div>
-                <div class="card-content">
-                    <span>Gender:</span><span class="right">
-                        <%=User._gender %></span>
-                </div>
-                <div class="divider"></div>
-                <div class="card-content">
-                    <span>Approved Roles:</span>
-                    <br>
-                    <span class="right">
-                        <label class="marginAll">
-                            <input type="checkbox" checked="checked" disabled="disabled" />
-                            <span>Author</span>
-                        </label>
-                        <label class="marginAll">
-                            <input type="checkbox" checked="checked" disabled="disabled" />
-                            <span>Reviewer</span>
-                        </label>
-                        <label class="marginAll">
-                            <input type="checkbox" disabled="disabled" />
-                            <span>Editor</span>
-                        </label>
-                    </span>
-                    <br>
-                </div>
-            </div>
+
+            <ul class="white collapsible expandable">
+                <li>
+                    <div class="collapsible-header">
+                        <span>
+                            <i class="material-icons">person</i><b>User Profile</b>
+                        </span>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            <%=User._name %> <a href="/edit" class="right waves-effect waves-light z-depth-0 btn-small"><i
+                                    class="material-icons">edit</i></a>
+                        </span>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>Email:</span><span class="right">
+                            <%=User._email %></span>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>Gender:</span><span class="right">
+                            <%=User._gender %></span>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>Approved Roles:</span>
+                        <br>
+                        <span class="right">
+                            <label class="marginAll">
+                                <input type="checkbox" checked="checked" disabled="disabled" />
+                                <span>Author</span>
+                            </label>
+                            <label class="marginAll">
+                                <input type="checkbox" checked="checked" disabled="disabled" />
+                                <span>Reviewer</span>
+                            </label>
+                            <label class="marginAll">
+                                <input type="checkbox" disabled="disabled" />
+                                <span>Editor</span>
+                            </label>
+                        </span>
+                        <br>
+                    </div>
+                </li>
+            </ul>
         </div>
         <br>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->

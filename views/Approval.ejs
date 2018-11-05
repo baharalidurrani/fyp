@@ -19,7 +19,7 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers</div>
                     <div class="collapsible-body">
-                        <table class="highlight">
+                        <table class="highlight centered">
                             <tbody>
                                 <% for(var i=0;i<TempUsers.length;i++){%>
                                 <% if(TempUsers[i]._rolesDemanded.indexOf('reviewer')>-1){%>
@@ -44,10 +44,17 @@
                     </div>
                 </li>
                 <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">people</i>Editors</div>
                     <div class="collapsible-body">
-                        <table class="highlight">
+                        <table class="highlight centered">
                             <tbody>
                                 <% for(var i=0;i<TempUsers.length;i++){%>
                                 <% if(TempUsers[i]._rolesDemanded.indexOf('editor')>-1){%>

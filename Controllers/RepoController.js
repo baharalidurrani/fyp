@@ -1,3 +1,5 @@
 exports.get = (req, res) => {
-    res.render('Repo');
+    res.render('Repo', {
+        User: req.user
+    });
 }

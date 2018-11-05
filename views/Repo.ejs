@@ -11,11 +11,15 @@
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <br>
         <div class="container center">
+            <br>
+
+            <%if(User._loggedAs != 'admin'){%>
             <a class="btn btn-large waves-effect waves-light themeAccent">Upload Paper</a>
             <br>
             <br>
+            <%}%>
+
             <ul class="white collapsible expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">assignment</i>Paper Repository</div>
