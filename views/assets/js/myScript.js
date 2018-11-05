@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
     $('.modal').modal();
+    $('input#input_text, textarea#textarea').characterCounter();
     // $('.collapsible').collapsible();
     ////////////////////////////////////////////////
 
