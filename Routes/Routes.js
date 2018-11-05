@@ -9,6 +9,7 @@ const Profile = require('../Controllers/ProfileController');
 const Logout = require('../Controllers/LogoutController');
 const Repo = require('../Controllers/RepoController');
 const Paper = require('../Controllers/PaperController');
+const Approval = require('../Controllers/ApprovalController');
 
 const Auth = require('../Middleware/passport_auth');
 
@@ -29,12 +30,13 @@ Router.get('/register', Auth.restric, Register.get);
 Router.post('/register', Register.post);
 
 Router.get('/profile', Auth.islogin, Profile.display);
-Router.post('/profile', Auth.islogin, Profile.approveUser);
-
-Router.get('/logout', Logout);
-
 Router.get('/edit', Auth.islogin, Profile.edit);
 Router.post('/edit', Auth.islogin, Profile.update);
+
+Router.get('/approval', Auth.islogin, Approval.get);
+Router.post('/approval', Auth.islogin, Approval.approveUser);
+
+Router.get('/logout', Logout);
 
 Router.get('/repo', Auth.islogin, Repo.get);
 Router.get('/paper', Auth.islogin, Paper.get);
