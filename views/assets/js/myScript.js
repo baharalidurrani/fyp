@@ -1,8 +1,10 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
-    $('.collapsible').collapsible();
-    $('.modal').modal();
+    // $('.modal').modal();
+    // $('.collapsible').collapsible();
+    ////////////////////////////////////////////////
+
     if (typeof (Storage) !== "undefined") {
         var colorArgs;
         if (colorArgs = localStorage.getItem("lastTheme"))
@@ -10,6 +12,14 @@ $(document).ready(function () {
     } else {
         console.log("localstorage not available");
     }
+
+    ////////////////////////////////////////////////
+
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+        accordion: false
+    });
+    instance.open();
 });
 
 function changeTheme(colorArgs) {
