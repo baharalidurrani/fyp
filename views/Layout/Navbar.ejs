@@ -16,8 +16,8 @@
                 <li><a href="./register">Register</a></li>
                 <% } else { %>
                 <li><a href="./profile">
-                        <%= person._name %></a></li>
-
+                        <%=person._name%> As
+                        <%=person._loggedAs%></a></li>
                 <li><a href="/logout">logout</a></li>
                 <% } %>
 
@@ -56,7 +56,8 @@
         <li><a class="waves-effect waves-teal" href="./register">Register</a></li>
         <% } else { %>
         <li><a class="waves-effect waves-teal" href="./profile">
-                <%= person._name %></a></li>
+                <%=person._name%> As
+                <%=person._loggedAs%></a></li>
         <li><a class="waves-effect waves-teal" href="/logout">logout</a></li>
         <% } %>
 
