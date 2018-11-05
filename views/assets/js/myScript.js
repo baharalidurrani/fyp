@@ -16,10 +16,12 @@ $(document).ready(function () {
     ////////////////////////////////////////////////
 
     var elem = document.querySelector('.collapsible.expandable');
-    var instance = M.Collapsible.init(elem, {
-        accordion: false
-    });
-    instance.open();
+    if (elem != null) {
+        var instance = M.Collapsible.init(elem, {
+            accordion: false
+        });
+        instance.open();
+    }
 });
 
 function changeTheme(colorArgs) {
