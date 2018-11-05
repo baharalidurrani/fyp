@@ -18,7 +18,16 @@
                 <li><a href="./profile">
                         <%=person._name%> As
                         <%=person._loggedAs%></a></li>
-                <li><a href="/logout">logout</a></li>
+                <!-- Modal Trigger -->
+                <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Logout</a></li>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal themePrimary">
+                    <div class="modal-content center">
+                        <a href="/logout" class="modal-close waves-effect waves-green btn-flat textPrimary">
+                            <h4>Confirm Logout?</h4>
+                        </a>
+                    </div>
+                </div>
                 <% } %>
 
                 <li><a class="dropdown-trigger" data-target="dropdown1">
@@ -58,7 +67,8 @@
         <li><a class="waves-effect waves-teal" href="./profile">
                 <%=person._name%> As
                 <%=person._loggedAs%></a></li>
-        <li><a class="waves-effect waves-teal" href="/logout">logout</a></li>
+        <!-- Modal Trigger -->
+        <li><a class="waves-effect waves-teal modal-trigger" href="#modal2">Logout</a></li>
         <% } %>
 
         <li><a onclick="changeTheme('#ee6e73')" class="btn red lighten-2 z-depth-0"></a></li>
@@ -72,4 +82,12 @@
         <li><a onclick="changeTheme('#00bcd4')" class="btn cyan z-depth-0"></a></li>
         <li><a onclick="changeTheme('#f44336')" class="btn red z-depth-0"></a></li>
     </ul>
+</div>
+<!-- Modal Structure -->
+<div id="modal2" class="modal themePrimary">
+    <div class="modal-content center">
+        <a href="/logout" class="modal-close waves-effect waves-green btn-flat textPrimary">
+            <h6>Confirm Logout?</h6>
+        </a>
+    </div>
 </div>

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
-    // $('.modal').modal();
+    $('.modal').modal();
     // $('.collapsible').collapsible();
     ////////////////////////////////////////////////
 
