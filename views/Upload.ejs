@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ./Layout/Head.ejs %>
+</head>
+
+<body>
+    <div id="root" class="gee6e73">
+
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <br>
+        <div class="container">
+            <div class="card-panel hoverable">
+                <form method="POST" action="/login">
+                    <div class="input-field">
+                        <input id="email" name="EMAIL" type="email" class="validate" required="" aria-required="true">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="password" name="PASS" type="password" class="validate" required="" aria-required="true">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="center">
+                        <button type="submit" name="AS" value="author" class="z-depth-0 waves-effect waves-light btn marginAll">Author</button>
+                        <button type="submit" name="AS" value="reviewer" class="z-depth-0 waves-effect waves-light btn marginAll">Reviewer</button>
+                        <button type="submit" name="AS" value="editor" class="z-depth-0 waves-effect waves-light btn marginAll">Editor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
+</body>
+
+</html>
