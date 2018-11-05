@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('.dropdown-trigger').dropdown();
     $('.modal').modal();
     $('input#input_text, textarea#textarea').characterCounter();
-    // $('.collapsible').collapsible();
+    $('.collapsible').collapsible();
     ////////////////////////////////////////////////
 
     if (typeof (Storage) !== "undefined") {

@@ -11,62 +11,182 @@
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <div class="container center">
+        <div class="container">
             <br>
 
             <%if(User._loggedAs != 'editor'){%>
-            <a href="/upload" class="btn btn-large waves-effect waves-light themeAccent">Upload Paper</a>
-            <br>
+            <div class="center">
+                <a href="/upload" class="btn btn-large waves-effect waves-light themeAccent">Upload Paper</a>
+            </div>
             <br>
             <%}%>
 
-            <ul class="white collapsible expandable">
+            <ul class="white collapsible">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">assignment</i>Paper Repository</div>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <h4 class="col s3">Topic</h4>
+                            <h4 class="col s3">Author</h4>
+                            <h4 class="col s3">Status</h4>
+                            <h4 class="col s3">Remarks</h4>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <span class="col s3"><a href="/paper">Material Design</a></span>
+                            <span class="col s3">Friends at Google</span>
+                            <span class="col s3">Accepted</span>
+                            <span class="col s3">It is a good concept.</span>
+                        </div>
+                    </div>
                     <div class="collapsible-body">
-                        <table class="highlight">
-                            <thead>
-                                <tr>
-                                    <th>Research Topic</th>
-                                    <th>Author</th>
-                                    <th>Status</th>
-                                    <th>Remarks</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td><a href="/paper">Material Design</a></td>
-                                    <td>Friends at Google</td>
-                                    <td>Accepted</td>
-                                    <td>It is a good concept.</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="/paper">GNU System</a></td>
-                                    <td>Richard Stallman</td>
-                                    <td>Accepted</td>
-                                    <td>Seems a free environment.</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="/paper">f.lux</a></td>
-                                    <td>Lorna Herf</td>
-                                    <td>Pending</td>
-                                    <td>This paper is being reviewed.</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="/paper">Electrionic Frontier Foundation</a></td>
-                                    <td>Edward Snowden</td>
-                                    <td>Accepted</td>
-                                    <td>It is a good concept.</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="/paper">Windows</a></td>
-                                    <td>Microsoft</td>
-                                    <td>Rejected</td>
-                                    <td>This concept don't respect user privacy.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <form method="POST" action="/upload">
+                            <div class="input-field">
+                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="COMMENT"
+                                    required="" aria-required="true"></textarea>
+                                <label for="textarea">Comment</label>
+                            </div>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View
+                                    Paper</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <span class="col s3"><a href="/paper">GNU System</a></span>
+                            <span class="col s3">Richard Stallman</span>
+                            <span class="col s3">Accepted</span>
+                            <span class="col s3">Seems a free environment.</span>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <form method="POST" action="/upload">
+                            <div class="input-field">
+                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="COMMENT"
+                                    required="" aria-required="true"></textarea>
+                                <label for="textarea">Comment</label>
+                            </div>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View
+                                    Paper</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <span class="col s3"><a href="/paper">f.lux</a></span>
+                            <span class="col s3">Lorna Herf</span>
+                            <span class="col s3">Pending</span>
+                            <span class="col s3">This paper is being reviewed.</span>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <form method="POST" action="/upload">
+                            <div class="input-field">
+                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="COMMENT"
+                                    required="" aria-required="true"></textarea>
+                                <label for="textarea">Comment</label>
+                            </div>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View
+                                    Paper</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <span class="col s3"><a href="/paper">Electrionic Frontier Foundation</a></span>
+                            <span class="col s3">Edward Snowden</span>
+                            <span class="col s3">Accepted</span>
+                            <span class="col s3">It is a good camapign.</span>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <form method="POST" action="/upload">
+                            <div class="input-field">
+                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="COMMENT"
+                                    required="" aria-required="true"></textarea>
+                                <label for="textarea">Comment</label>
+                            </div>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View
+                                    Paper</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <span class="col s3"><a href="/paper">Windows</a></span>
+                            <span class="col s3">Microsoft</span>
+                            <span class="col s3">Rejected</span>
+                            <span class="col s3">This concept don't respect user privacy.</span>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <form method="POST" action="/upload">
+                            <div class="input-field">
+                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="COMMENT"
+                                    required="" aria-required="true"></textarea>
+                                <label for="textarea">Comment</label>
+                            </div>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View
+                                    Paper</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                            </div>
+                        </form>
                     </div>
                 </li>
             </ul>
