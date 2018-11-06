@@ -25,6 +25,12 @@ $(document).ready(function () {
     }
 });
 
+function closePaper(index) {
+    var elem = document.querySelector('.collapsible.popout');
+    var instance = M.Collapsible.init(elem);
+    instance.close(index);
+}
+
 function changeTheme(colorArgs) {
     $('.sidenav').sidenav('close');
 
