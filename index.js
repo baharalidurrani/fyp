@@ -21,7 +21,7 @@ mongoose.connect(URI).then(() => {
     console.log('Database Connnected');
 }).catch((err) => {
     console.log(err);
-})
+});
 
 //setting template engine
 app.set('view engine', 'ejs');
@@ -48,8 +48,7 @@ app.use(passport.session());
 app.use(function (req, res, next) {
     res.locals.person = req.user;
     next();
-
-})
+});
 
 //fetch routes
 app.use(require('./Routes/Routes'));
