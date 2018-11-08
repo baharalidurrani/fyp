@@ -39,17 +39,13 @@ UserSchema.pre('save', function (next) {
 
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(user._password, salt, (error, hash) => {
-
             user._password = hash;
             next();
-
-        })
-
+        });
     });
-
 });
 
-UserSchema.methods.comparePassword = function (temp_pass, callback) {
+UserSchema.methods.comparePassword = function (temp_pass, loggedAs, callback) {
     var user = this;
     bcrypt.compare(temp_pass, user._password, (err, Ismatch) => {
         if (err) {
@@ -57,9 +53,15 @@ UserSchema.methods.comparePassword = function (temp_pass, callback) {
             return callback(err);
         }
 
-        console.log(Ismatch);
-        callback(null, Ismatch);
-        console.log(user._name + " logged in");
+        if (user._rolesApproved.indexOf(loggedAs) != -1) {
+            user._loggedAs = loggedAs;
+            user.save();
+            callback(null, Ismatch);
+            console.log(user._name + " logged in AS " + user._loggedAs);
+        } else {
+            callback(null, false);
+            console.log(user._name + " is not permitted as " + loggedAs);
+        }
     });
 }
 var UserModel = mongoose.model('User', UserSchema);
