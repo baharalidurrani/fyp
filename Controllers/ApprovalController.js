@@ -24,16 +24,21 @@ exports.approveUser = (req, res) => {
     if (id.includes("editor-")) {
         role = "editor";
         id = id.replace('editor-', '');
-    } else {
+    } else if (id.includes("reviewer-")) {
         role = "reviewer";
         id = id.replace('reviewer-', '');
+    } else {
+        role = "author";
+        id = id.replace('author-', '');
     }
 
     UserModel.findById(id).then((user) => {
         var rolesDemanded = user._rolesDemanded;
         var rolesApproved = user._rolesApproved;
-        rolesDemanded.splice(rolesDemanded.indexOf(role), 1);
+        //append role to Approved list
         rolesApproved.push(role);
+        //remove role from demand list
+        rolesDemanded.splice(rolesDemanded.indexOf(role), 1);
         UserModel.findByIdAndUpdate(id, {
             _rolesDemanded: rolesDemanded,
             _rolesApproved: rolesApproved

@@ -17,6 +17,41 @@
 
             <ul class="white collapsible expandable">
                 <li>
+                    <div class="collapsible-header"><i class="material-icons">people</i>Authors</div>
+                    <div class="collapsible-body">
+                        <table class="highlight centered">
+                            <tbody>
+                                <% for(var i=0;i<TempUsers.length;i++){%>
+                                <% if(TempUsers[i]._rolesDemanded.indexOf('author')>-1){%>
+                                <tr>
+                                    <td>
+                                        <%=TempUsers[i]._name%>
+                                    </td>
+                                    <td>
+                                        <%=TempUsers[i]._email%>
+                                    </td>
+                                    <td>
+                                        <form action="/approval" method="POST">
+                                            <button class="btn waves-effect waves-light themeAccent btn-small" type="submit"
+                                                name="data" value="<%='author-'+TempUsers[i]._id%>">Approve</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <%}%>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <div class="divider"></div>
+                <li>
                     <div class="collapsible-header"><i class="material-icons">people_outline</i>Reviewers</div>
                     <div class="collapsible-body">
                         <table class="highlight centered">
