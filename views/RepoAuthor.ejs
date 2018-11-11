@@ -25,8 +25,16 @@
                 <li class="white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
+                            <%if(i==1){%>
+                            <i class="material-icons green-text tooltipped" data-tooltip="Accepted">done_outlined</i>
+                            <%}else if(i==2){%>
+                            <i class="material-icons red-text tooltipped" data-tooltip="Rejected">clear</i>
+                            <%}else if(i==3){%>
+                            <i class="material-icons blue-text tooltipped" data-tooltip="Published">cloud_upload</i>
+                            <%}else{%>
+                            <i class="material-icons yellow-text tooltipped" data-tooltip="Pending">error</i>
+                            <%}%>
                             <p class="flow-text col s6 l8">GNU System GNU System GNU System</p>
-                            <i class="material-icons">done_outlined</i>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>

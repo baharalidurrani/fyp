@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('.modal').modal();
     $('input#input_text, textarea#textarea').characterCounter();
     $('.collapsible').collapsible();
+    $('.tooltipped').tooltip();
     ////////////////////////////////////////////////
 
     if (typeof (Storage) !== "undefined") {
