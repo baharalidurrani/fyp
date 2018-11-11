@@ -15,48 +15,44 @@
             <br>
 
             <div class="center">
-                <a href="/upload" class="btn btn-large waves-effect waves-light themeAccent">Upload Paper</a>
+                <a href="/upload" class="btn btn-large waves-effect waves-light themeAccent"><i class="material-icons right">cloud_upload
+                    </i>Upload Paper</a>
             </div>
             <br>
 
             <ul class="collapsible popout">
+                <%for(var i=0;i<4;i++){%>
                 <li class="white">
                     <div class="row">
-                        <div>
-                            <h6 class="col s3"><b>Topic</b></h6>
-                            <h6 class="col s3"><b>Author</b>(s)</h6>
-                            <h6 class="col s3"><b>Status</b></h6>
-                            <h6 class="col s3"></h6>
-                        </div>
-                    </div>
-                </li>
-                <%for(var i=1;i<4;i++){%>
-                <li class="white">
-                    <div class="row">
-                        <div class="collapsible-header">
-                            <span class="col s3"><b>GNU System</b></span>
-                            <span class="col s3">Richard Stallman</span>
-                            <span class="col s3">Accepted</span>
-                            <a class="col s3 z-depth-0 waves-effect waves-light btn-small">Review</a>
+                        <div class="collapsible-header valign-wrapper">
+                            <p class="flow-text col s6 l8">GNU System GNU System GNU System</p>
+                            <i class="material-icons">done_outlined</i>
+                            <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="collapsible-body">
-                        <form method="POST" action="/upload">
-                            <div class="input-field">
-                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="FORAUTHOR"
-                                    required="" aria-required="true"></textarea>
-                                <label for="textarea">Comment for Author</label>
-                            </div>
-                            <div class="input-field">
-                                <textarea id="textarea" class="materialize-textarea" data-length="325" name="FOREDITOR"
-                                    required="" aria-required="true"></textarea>
-                                <label for="textarea">Comment for Editor</label>
-                            </div>
+                        <blockquote>
+                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 2:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 3:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+
+                        <form method="POST" action="/delete">
                             <div class="center">
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
-                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
-                                <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
-                                <a onclick="closePaper('<%=i%>')" class="z-depth-0 waves-effect waves-light btn-small marginAll">Cancel</a>
+                                <button type="submit" name="AS" value="delete" class="z-depth-0 waves-effect waves-light btn-small marginAll">Delete</button>
+                                <a onclick="closePaper('<%=i%>')" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>
                         </form>
                     </div>
