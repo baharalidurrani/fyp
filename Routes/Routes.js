@@ -25,8 +25,11 @@ Router.post('/login', Passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
 }));
-//Register route
 
+//change role without log off
+Router.post('/reLogin', Auth.islogin, Login.changeRole);
+
+//Register route
 Router.get('/register', Auth.restric, Register.get);
 Router.post('/register', Register.post);
 
