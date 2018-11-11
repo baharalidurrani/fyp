@@ -21,6 +21,26 @@
             </div>
             <%}%>
 
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title center">Login Again As</span>
+                    <div class="card-content">
+                        <form method="RELOGIN" action="/login">
+                            <div class="center">
+                                <%for(var i=0;i<User._rolesApproved.length;i++){%>
+                                <label class="marginAll">
+                                    <input name="AS" value="<%=User._rolesApproved[i]%>" name="group1" type="radio" />
+                                    <span>
+                                        <%=User._rolesApproved[i]%></span>
+                                </label>
+                                <%}%>
+                                <button type="submit" class="z-depth-0 waves-effect waves-light btn marginAll">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <ul class="white collapsible expandable">
                 <li>
                     <div class="collapsible-header">
@@ -41,25 +61,6 @@
                     <div class="collapsible-body">
                         <span>Gender:</span><span class="right">
                             <%=User._gender %></span>
-                    </div>
-                    <div class="collapsible-body">
-                        <span>Approved Roles:</span>
-                        <br>
-                        <span class="right">
-                            <label class="marginAll">
-                                <input type="checkbox" checked="checked" disabled="disabled" />
-                                <span>Author</span>
-                            </label>
-                            <label class="marginAll">
-                                <input type="checkbox" checked="checked" disabled="disabled" />
-                                <span>Reviewer</span>
-                            </label>
-                            <label class="marginAll">
-                                <input type="checkbox" disabled="disabled" />
-                                <span>Editor</span>
-                            </label>
-                        </span>
-                        <br>
                     </div>
                 </li>
             </ul>
