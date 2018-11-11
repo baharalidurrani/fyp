@@ -1,5 +1,9 @@
 exports.get = (req, res) => {
-    if (req.user._loggedAs == 'reviewer') {
+    if (req.user._loggedAs == 'editor') {
+        res.render('RepoEditor', {
+            User: req.user
+        });
+    } else if (req.user._loggedAs == 'reviewer') {
         res.render('RepoReviewer', {
             User: req.user
         });
