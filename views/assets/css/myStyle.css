@@ -1,13 +1,18 @@
-.iconPrimary {
-    color: #009688
+:root {
+    --primary: #ee6e73;
+    --accent: #009688;
 }
 
 .themePrimary {
-    background-color: #ee6e73
+    background-color: var(--primary);
 }
 
 .themeAccent {
-    background-color: #009688
+    background-color: var(--accent);
+}
+
+blockquote {
+    border-left: 5px solid var(--accent);
 }
 
 .textDark {
@@ -60,7 +65,7 @@
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #86fde8, #acb6e5);
+    background: linear-gradient(to bottom, #86fde8, #acb6e5);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -90,7 +95,7 @@
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #86fde8, #acb6e5);
+    background: linear-gradient(to bottom, #86fde8, #acb6e5);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -102,7 +107,7 @@
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fbc2eb, #a6c1ee);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background-image: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%);
 }
 
 /* red */

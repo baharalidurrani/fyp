@@ -37,14 +37,10 @@ function changeTheme(colorArgs) {
     //runtime mobile statusbar change
     document.getElementsByTagName("meta")[0].setAttribute("content", colorArgs);
 
-    var elems = document.getElementsByClassName("themePrimary");
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].style.background = colorArgs;
-    }
-    var icons = document.getElementsByClassName("iconPrimary");
-    for (let i = 0; i < icons.length; i++) {
-        icons[i].style.color = colorArgs;
-    }
+    //change primary theme (CSS variable)
+    $('body').css('--primary', colorArgs);
+
+    //save primary theme for next time
     if (typeof (Storage) !== "undefined") {
         localStorage.setItem("lastTheme", colorArgs);
         if (colorArgs === '#ee6e73')
