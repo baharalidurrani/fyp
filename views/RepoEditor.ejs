@@ -11,30 +11,20 @@
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <br>
-        <h1 class="themePrimary white-text center">Editor Repo Under Construction</h1>
-        <br>
-
+        <p class="themePrimary white-text center flow-text">Unassigned</p>
         <div class="container">
             <ul class="collapsible popout">
                 <%for(var i=0;i<4;i++){%>
-                <li class="white">
+                <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <%if(i==1){%>
-                            <i class="material-icons green-text tooltipped" data-tooltip="Accepted">done_outlined</i>
-                            <%}else if(i==2){%>
-                            <i class="material-icons red-text tooltipped" data-tooltip="Rejected">clear</i>
-                            <%}else if(i==3){%>
-                            <i class="material-icons blue-text tooltipped" data-tooltip="Published">cloud_upload</i>
-                            <%}else{%>
-                            <i class="material-icons purple-text tooltipped" data-tooltip="Pending">error</i>
-                            <%}%>
-                            <p class="flow-text col s6 l8">GNU System GNU System GNU System</p>
+                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s1"> | </p>
+                            <p class="flow-text col s5">Richard Stallman</p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
-                    <div class="collapsible-body">
+                    <div class="btnClose collapsible-body">
                         <blockquote>
                             <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -55,8 +45,106 @@
                         <form method="POST" action="/delete">
                             <div class="center">
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
-                                <button type="submit" name="AS" value="delete" class="z-depth-0 waves-effect waves-light btn-small marginAll">Delete</button>
-                                <a onclick="closePaper('<%=i%>')" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+        <br>
+
+        <p class="themePrimary white-text center flow-text">Assigned</p>
+        <div class="container">
+            <ul class="collapsible popout">
+                <%for(var j=0;j<4;j++){%>
+                <li class="btnClose white">
+                    <div class="row">
+                        <div class="collapsible-header valign-wrapper">
+                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s1"> | </p>
+                            <p class="flow-text col s5">Richard Stallman</p>
+                            <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
+                        </div>
+                    </div>
+                    <div class="btnClose collapsible-body">
+                        <blockquote>
+                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Reviewer 1:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
+                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
+                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Reviewer 2:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
+                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
+                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Reviewer 3:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
+                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
+                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
+                        </blockquote>
+
+                        <form method="POST" action="/delete">
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="AS" value="reject" class="red z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+        <br>
+
+        <p class="themePrimary white-text center flow-text">Indexed</p>
+        <div class="container">
+            <ul class="collapsible popout">
+                <%for(var k=0;k<4;k++){%>
+                <li class="btnClose white">
+                    <div class="row">
+                        <div class="collapsible-header valign-wrapper">
+                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s1"> | </p>
+                            <p class="flow-text col s5">Richard Stallman</p>
+                            <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
+                        </div>
+                    </div>
+                    <div class="btnClose collapsible-body">
+                        <blockquote>
+                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 2:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+                        <blockquote>
+                            <p class="flow-text"><b>Review 3:</b> sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </blockquote>
+
+                        <form method="POST" action="/delete">
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>
                         </form>
                     </div>

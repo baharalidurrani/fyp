@@ -26,7 +26,7 @@
                     </div>
                 </li>
                 <%for(var i=1;i<4;i++){%>
-                <li class="white">
+                <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header">
                             <span class="col s3"><b>GNU System</b></span>
@@ -35,7 +35,7 @@
                             <a class="col s3 z-depth-0 waves-effect waves-light btn-small">Review</a>
                         </div>
                     </div>
-                    <div class="collapsible-body">
+                    <div class="btnClose collapsible-body">
                         <form method="POST" action="/upload">
                             <div class="input-field">
                                 <textarea id="textarea" class="materialize-textarea" data-length="325" name="FORAUTHOR"
@@ -51,7 +51,7 @@
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
                                 <button type="submit" name="AS" value="reject" class="z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
-                                <a onclick="closePaper('<%=i%>')" class="z-depth-0 waves-effect waves-light btn-small marginAll">Cancel</a>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Cancel</a>
                             </div>
                         </form>
                     </div>

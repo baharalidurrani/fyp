@@ -26,10 +26,10 @@ $(document).ready(function () {
     }
 });
 
-function closePaper(index) {
-    var elem = document.querySelector('.collapsible.popout');
-    var instance = M.Collapsible.init(elem);
-    instance.close(index);
+//close collapsable body (Dr.'s requirement)
+function btnClose() {
+    $(".btnClose").removeClass("active");
+    $(".btnClose").removeAttr("style");
 }
 
 function changeTheme(colorArgs) {

@@ -22,7 +22,7 @@
 
             <ul class="collapsible popout">
                 <%for(var i=0;i<4;i++){%>
-                <li class="white">
+                <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
                             <%if(i==1){%>
@@ -38,7 +38,7 @@
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
-                    <div class="collapsible-body">
+                    <div class="btnClose collapsible-body">
                         <blockquote>
                             <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -60,7 +60,7 @@
                             <div class="center">
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <button type="submit" name="AS" value="delete" class="z-depth-0 waves-effect waves-light btn-small marginAll">Delete</button>
-                                <a onclick="closePaper('<%=i%>')" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>
                         </form>
                     </div>
