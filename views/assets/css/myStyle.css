@@ -1,5 +1,5 @@
 :root {
-    --primary: #ee6e73;
+    --primary: #9c27b0;
     --accent: #009688;
 }
 
@@ -13,14 +13,6 @@
 
 blockquote {
     border-left: 5px solid var(--accent);
-}
-
-.textDark {
-    color: black
-}
-
-.textPrimary {
-    color: white
 }
 
 .marginAll {

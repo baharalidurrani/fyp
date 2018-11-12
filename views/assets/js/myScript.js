@@ -1,20 +1,22 @@
 $(document).ready(function () {
+    //intilize sidenav because its required in theme change func
     $('.sidenav').sidenav();
-    $('.dropdown-trigger').dropdown();
-    $('.modal').modal();
-    $('input#input_text, textarea#textarea').characterCounter();
-    $('.collapsible').collapsible();
-    $('.tooltipped').tooltip();
-    ////////////////////////////////////////////////
 
+    //retrive last saved theme
     if (typeof (Storage) !== "undefined") {
         var colorArgs;
         if (colorArgs = localStorage.getItem("lastTheme"))
             changeTheme(colorArgs);
     } else {
-        console.log("localstorage not available");
+        console.log("localstorage not available for getting last theme");
     }
 
+    //intilize material components
+    $('.dropdown-trigger').dropdown();
+    $('.modal').modal();
+    $('input#input_text, textarea#textarea').characterCounter();
+    $('.collapsible').collapsible();
+    $('.tooltipped').tooltip();
     ////////////////////////////////////////////////
 
     var elem = document.querySelector('.collapsible.expandable');
@@ -52,10 +54,8 @@ function changeTheme(colorArgs) {
     //save primary theme for next time
     if (typeof (Storage) !== "undefined") {
         localStorage.setItem("lastTheme", colorArgs);
-        if (colorArgs === '#ee6e73')
-            localStorage.removeItem('lastTheme');
     } else {
-        console.log("localstorage not available");
+        console.log("localstorage not available for theme saving");
     }
 
     //for changing backround gradient
