@@ -28,8 +28,16 @@ $(document).ready(function () {
 
 //close collapsable body (Dr.'s requirement)
 function btnClose() {
-    $(".btnClose").removeClass("active");
+    //scroll animation while closing
     $(".btnClose").removeAttr("style");
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("li.btnClose.active").offset().top
+    }, 500);
+
+    //show collapsable for a moment before closing
+    setTimeout(() => {
+        $(".btnClose").removeClass("active");
+    }, 1000);
 }
 
 function changeTheme(colorArgs) {
