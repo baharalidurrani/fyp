@@ -9,6 +9,7 @@ const Profile = require('../Controllers/ProfileController');
 const Logout = require('../Controllers/LogoutController');
 const Repo = require('../Controllers/RepoController');
 const Paper = require('../Controllers/PaperController');
+const Assign = require('../Controllers/AssignController');
 const Upload = require('../Controllers/UploadController');
 const Approval = require('../Controllers/ApprovalController');
 
@@ -45,5 +46,7 @@ Router.get('/logout', Logout);
 Router.get('/repo', Auth.islogin, Repo.get);
 
 Router.get('/paper', Auth.islogin, Paper.get);
+
+Router.get('/assign', Auth.islogin, Assign.get);
 
 Router.get('/upload', Auth.islogin, Upload.get);
