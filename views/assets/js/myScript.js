@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    //intilize sidenav because its required in theme change func
-    $('.sidenav').sidenav();
-
     //retrive last saved theme
     if (typeof (Storage) !== "undefined") {
         var colorArgs;
@@ -12,6 +9,7 @@ $(document).ready(function () {
     }
 
     //intilize material components
+    $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
     $('.modal').modal();
     $('input#input_text, textarea#textarea').characterCounter();
@@ -43,8 +41,6 @@ function btnClose() {
 }
 
 function changeTheme(colorArgs) {
-    $('.sidenav').sidenav('close');
-
     //runtime mobile statusbar change
     document.getElementsByTagName("meta")[0].setAttribute("content", colorArgs);
 
@@ -61,4 +57,9 @@ function changeTheme(colorArgs) {
     //for changing backround gradient
     var color = colorArgs.replace('#', 'g');
     $("#root").attr('class', color);
+}
+
+function changeThemeClose(args) {
+    $('.sidenav').sidenav('close');
+    changeTheme(args);
 }
