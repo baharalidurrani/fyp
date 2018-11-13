@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ./Layout/Head.ejs %>
+</head>
+
+<body>
+    <div id="root" class="g9c27b0">
+
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="card col s12 m8 push-m2">
+                    <div class="card-content center">
+                        <span class="card-title">The GNU System</span>
+                        <form method="POST" action="/register">
+                            <table class="highlight">
+                                <tbody>
+                                    <%for(var i=21563654; i<21563660; i++){%>
+                                    <tr>
+                                        <td class="center">Reviewer:
+                                            <%=Math.random().toString(36).substring(7);%>
+                                        </td>
+                                        <td class="center">
+                                            <label>
+                                                <input name="reviewer" value="<%=i%>" type="checkbox" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
+                            <button type="submit" name="paper" value="paperID" class="z-depth-0 waves-effect waves-light btn marginAll">Assign</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
+</body>
+
+</html>
