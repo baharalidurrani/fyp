@@ -23,7 +23,7 @@ var ConferenceSchema = new Schema({
         required: true
     },
     _reviewers: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
         ref: 'User',
         required: true
     }

@@ -17,5 +17,8 @@ exports.post = (req, res) => {
     userModel.save().then((temp) => {
         console.log(temp);
         res.redirect('/')
-    }).catch((err) => res.redirect('/login'));
+    }).catch((err) => {
+        console.log(err);
+        res.redirect('/login');
+    });
 }
