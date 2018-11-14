@@ -15,6 +15,7 @@ $(document).ready(function () {
     $('input#input_text, textarea#textarea').characterCounter();
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
+    $('.datepicker').datepicker();
     ////////////////////////////////////////////////
 
     var elem = document.querySelector('.collapsible.expandable');
