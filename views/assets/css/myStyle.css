@@ -19,6 +19,10 @@ blockquote {
     margin: 1vw
 }
 
+.fullw {
+    width: 100%
+}
+
 /* red lighten-2 materialize css default */
 .gee6e73 {
     background: #feada6;

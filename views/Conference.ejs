@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ./Layout/Head.ejs %>
+</head>
+
+<body>
+    <div id="root" class="g9c27b0">
+
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 push-m2">
+                    <div class="card-panel hoverable">
+                        <form method="POST" action="/conference">
+                            <div class="input-field">
+                                <input id="name" type="text" class="validate" name="NAME" required="" aria-required="true">
+                                <label for="name">Conference Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="location" type="text" class="validate" name="LOCATION" required=""
+                                    aria-required="true">
+                                <label for="location">Location</label>
+                            </div>
+                            <br>
+                            <div>
+                                <span class="marginAll">Add Reviewers for this Conference</span><br><br>
+                                <%for(var i=21563654; i<21563660; i++){%>
+                                <label class="marginAll">
+                                    <input name="reviewer" value="<%=Math.random().toString(36).substring(7);%>" type="checkbox" />
+                                    <span class="marginAll">Reviewer:
+                                        <%=Math.random().toString(36).substring(7);%></span>
+                                </label>
+                                <br>
+                                <%}%>
+                            </div>
+                            <div class="marginAll">
+                                <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small fullw" type="submit"
+                                    name="action">Create Conference</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
+</body>
+
+</html>

@@ -6,6 +6,7 @@ exports.get = (req, res) => {
         UserModel.find({
             _rolesApproved: "reviewer"
         }).then((reviewers) => {
+            console.log(reviewers);
             res.render('Conference', {
                 Reviewers: reviewers,
             });
