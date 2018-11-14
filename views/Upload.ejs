@@ -13,42 +13,46 @@
 
         <br>
         <div class="container">
-            <div class="card-panel hoverable">
-                <form method="POST" action="/upload">
-                    <div class="input-field">
-                        <input id="input_text" type="text" data-length="40" name="TITLE" required="" aria-required="true">
-                        <label for="input_text">Paper Title</label>
-                    </div>
-                    <div class="input-field">
-                        <textarea id="textarea" class="materialize-textarea" data-length="325" name="INTRO" required=""
-                            aria-required="true"></textarea>
-                        <label for="textarea">Brief Introduction</label>
-                    </div>
-                    <div class="file-field input-field">
-                        <div class="btn">
-                            <span>PDF</span>
-                            <input type="file">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div class="card-title center">Upload Paper</div>
+                    <form method="POST" action="/upload">
+                        <div class="input-field">
+                            <input id="input_text" type="text" data-length="40" name="TITLE" required="" aria-required="true">
+                            <label for="input_text">Paper Title</label>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" name="FILE" required="" aria-required="true">
+                        <div class="input-field">
+                            <textarea id="textarea" class="materialize-textarea" data-length="325" name="INTRO"
+                                required="" aria-required="true"></textarea>
+                            <label for="textarea">Brief Introduction</label>
                         </div>
-                    </div>
-                    <br>
-                    <div class="input-field">
-                        <select>
-                            <%for(var i=0; i<Conferences.length; i++){%>
-                            <option value="<%=Conferences[i]._id%>">
-                                <%=Conferences[i]._name%>
-                            </option>
-                            <%}%>
-                        </select>
-                        <label>Choose Conference</label>
-                    </div>
-                    <div class="marginAll">
-                        <button type="submit" class="fullw z-depth-0 waves-effect waves-light btn marginAll">Upload
-                            Paper</button>
-                    </div>
-                </form>
+                        <div class="file-field input-field">
+                            <div class="btn z-depth-0">
+                                <span>PDF</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" name="FILE" required="" aria-required="true">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <select name="CONFERENCE">
+                                <%for(var i=0; i<Conferences.length; i++){%>
+                                <option value="<%=Conferences[i]._id%>">
+                                    <%=Conferences[i]._name%>
+                                </option>
+                                <%}%>
+                            </select>
+                            <label>Choose Conference</label>
+                        </div>
+                        <br>
+                        <div class="marginAll">
+                            <button type="submit" class="fullw z-depth-0 waves-effect waves-light btn">Upload
+                                Paper</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <br>

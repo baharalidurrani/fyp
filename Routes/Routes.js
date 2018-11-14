@@ -55,7 +55,7 @@ Router.get('/assign', Auth.islogin, Assign.get);
 Router.post('/assign', Auth.islogin, Assign.post);
 
 Router.get('/upload', Auth.islogin, Upload.get);
-//post
+Router.post('/upload', Auth.islogin, Upload.post);
 
 Router.get('/conference', Auth.islogin, Conference.get);
 Router.post('/conference', Auth.islogin, Conference.post);

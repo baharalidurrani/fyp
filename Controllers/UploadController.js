@@ -7,3 +7,7 @@ exports.get = (req, res) => {
         });
     }).catch((err) => console.log(err));
 }
+
+exports.post = (req, res) => {
+    console.log(req.body);
+}
