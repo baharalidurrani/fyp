@@ -1,3 +1,9 @@
+const ConferenceModel = require('../Models/Conference');
+
 exports.get = (req, res) => {
-    res.render('Upload');
+    ConferenceModel.find().then((conferences) => {
+        res.render('Upload', {
+            Conferences: conferences,
+        });
+    }).catch((err) => console.log(err));
 }

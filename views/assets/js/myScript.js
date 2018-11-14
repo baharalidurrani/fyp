@@ -16,6 +16,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('.datepicker').datepicker();
+    $('select').formSelect();
     ////////////////////////////////////////////////
 
     var elem = document.querySelector('.collapsible.expandable');
