@@ -45,13 +45,17 @@ Router.post('/approval', Auth.islogin, Approval.approveUser);
 Router.get('/logout', Logout);
 
 Router.get('/repo', Auth.islogin, Repo.get);
+//post
 
 Router.get('/paper', Auth.islogin, Paper.get);
+//post
 
 //assign reviewers for a paper
 Router.get('/assign', Auth.islogin, Assign.get);
 Router.post('/assign', Auth.islogin, Assign.post);
 
 Router.get('/upload', Auth.islogin, Upload.get);
+//post
 
 Router.get('/conference', Auth.islogin, Conference.get);
+//post
