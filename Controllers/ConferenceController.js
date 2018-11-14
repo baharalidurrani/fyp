@@ -6,7 +6,6 @@ exports.get = (req, res) => {
         UserModel.find({
             _rolesApproved: "reviewer"
         }).then((reviewers) => {
-            console.log(reviewers);
             res.render('Conference', {
                 Reviewers: reviewers,
             });
@@ -18,5 +17,5 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
     console.log('conference post');
-    console.log(req);
+    console.log(req.body);
 }
