@@ -13,28 +13,24 @@
         <div class="container">
             <br>
             <div class="row">
-                <div class="card col s12 m8 push-m2">
+                <div class="card col s12 m8 push-m2 hoverable">
                     <div class="card-content center">
                         <span class="card-title">The GNU System</span>
                         <form method="POST" action="/assign">
-                            <table class="highlight">
-                                <tbody>
-                                    <%for(var i=21563654; i<21563660; i++){%>
-                                    <tr>
-                                        <td class="center">Reviewer:
-                                            <%=Math.random().toString(36).substring(7);%>
-                                        </td>
-                                        <td class="center">
-                                            <label>
-                                                <input name="reviewer" value="<%=i%>" type="checkbox" />
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <%}%>
-                                </tbody>
-                            </table>
-                            <button type="submit" name="paper" value="paperID" class="z-depth-0 waves-effect waves-light btn marginAll">Assign</button>
+                            <%for(var i=21563654; i<21563660; i++){%>
+                            <br>
+                            <label class="marginAll">
+                                <input name="reviewer" value="<%=i%>" type="checkbox" />
+                                <span class="marginAll">Reviewer:
+                                    <%=Math.random().toString(36).substring(7);%></span>
+                            </label>
+                            <br>
+                            <%}%>
+                            <br>
+                            <div class="marginAll">
+                                <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small fullw" type="submit"
+                                    name="action">Assign Reviewers</button>
+                            </div>
                         </form>
                     </div>
                 </div>
