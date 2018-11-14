@@ -10,11 +10,17 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="./">Home</a></li>
                 <li><a href="./repo">Paper Repo</a></li>
-
                 <% if(!person) { %>
                 <li><a href="./login">Login</a></li>
                 <li><a href="./register">Register</a></li>
                 <% } else { %>
+                <% if(person._loggedAs=='editor') { %>
+                <li><a href="./conference">Conference</a></li>
+                <li><a href="./approval">User Approval</a></li>
+                <% } %>
+                <% if(person._loggedAs=='author') { %>
+                <li><a href="./upload">Upload Paper</a></li>
+                <% } %>
                 <li><a href="./profile">
                         <%=person._name%> As
                         <%=person._loggedAs%></a></li>
@@ -59,11 +65,17 @@
         <div class="divider"></div>
         <li><a class="waves-effect waves-teal" href="./">Home</a></li>
         <li><a class="waves-effect waves-teal" href="./repo">Paper Repo</a></li>
-
         <% if(!person) { %>
         <li><a class="waves-effect waves-teal" href="./login">Login</a></li>
         <li><a class="waves-effect waves-teal" href="./register">Register</a></li>
         <% } else { %>
+        <% if(person._loggedAs=='editor') { %>
+        <li><a class="waves-effect waves-teal" href="./conference">Conference</a></li>
+        <li><a class="waves-effect waves-teal" href="./approval">User Approval</a></li>
+        <% } %>
+        <% if(person._loggedAs=='author') { %>
+        <li><a class="waves-effect waves-teal" href="./upload">Upload Paper</a></li>
+        <% } %>
         <li><a class="waves-effect waves-teal" href="./profile">
                 <%=person._name%> As
                 <%=person._loggedAs%></a></li>
