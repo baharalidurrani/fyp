@@ -15,3 +15,8 @@ exports.get = (req, res) => {
         res.redirect('/repo');
     }
 }
+
+exports.post = (req, res) => {
+    console.log('conference post');
+    console.log(req);
+}

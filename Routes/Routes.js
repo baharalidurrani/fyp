@@ -58,4 +58,4 @@ Router.get('/upload', Auth.islogin, Upload.get);
 //post
 
 Router.get('/conference', Auth.islogin, Conference.get);
-//post
+Router.post('/conference', Auth.islogin, Conference.post);

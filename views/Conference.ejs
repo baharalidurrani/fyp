@@ -41,20 +41,19 @@
                                 <br>
                                 <div>
                                     <span class="marginAll">Add Reviewers for this Conference</span><br><br>
-                                    <%for(var i=21563654; i<21563660; i++){%>
+                                    <%for(var i=0; i<Reviewers.length; i++){%>
                                     <label class="marginAll">
-                                        <input name="reviewer" value="<%=Math.random().toString(36).substring(7);%>"
-                                            type="checkbox" />
-                                        <span class="marginAll">Reviewer:
-                                            <%=Math.random().toString(36).substring(7);%></span>
+                                        <input name="reviewer" value="<%=Reviewers[i]._id%>" type="checkbox" />
+                                        <span class="marginAll">
+                                            <%=Reviewers[i]._name%></span>
                                     </label>
                                     <br>
                                     <br>
                                     <%}%>
                                 </div>
                                 <div class="marginAll">
-                                    <button class="btn waves-effect waves-light themeAccent z-depth-0 btn fullw"
-                                        type="submit" name="action">Create Conference</button>
+                                    <button class="btn waves-effect waves-light themeAccent z-depth-0 btn fullw" type="submit"
+                                        name="action">Create Conference</button>
                                 </div>
                             </form>
                         </div>
