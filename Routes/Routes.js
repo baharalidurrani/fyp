@@ -12,6 +12,7 @@ const Paper = require('../Controllers/PaperController');
 const Assign = require('../Controllers/AssignController');
 const Upload = require('../Controllers/UploadController');
 const Approval = require('../Controllers/ApprovalController');
+const Conference = require('../Controllers/ConferenceController');
 
 const Auth = require('../Middleware/passport_auth');
 
@@ -52,3 +53,5 @@ Router.get('/assign', Auth.islogin, Assign.get);
 Router.post('/assign', Auth.islogin, Assign.post);
 
 Router.get('/upload', Auth.islogin, Upload.get);
+
+Router.get('/conference', Auth.islogin, Conference.get);
