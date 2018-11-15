@@ -25,12 +25,12 @@ var UserSchema = new Schema({
     _loggedAs: {
         type: String
     },
-    _rolesDemanded: {
-        type: [String]
-    },
-    _rolesApproved: {
-        type: [String]
-    }
+    _rolesDemanded: [{
+        type: String
+    }],
+    _rolesApproved: [{
+        type: String
+    }]
 });
 
 UserSchema.pre('save', function (next) {

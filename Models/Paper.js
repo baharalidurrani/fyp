@@ -29,10 +29,10 @@ var PaperSchema = new Schema({
     _status: {
         type: String,
     },
-    _reviews: {
-        type: [Schema.Types.ObjectId],
+    _reviews: [{
+        type: Schema.Types.ObjectId,
         ref: 'Review',
-    },
+    }],
     _plagirism: {
         type: String,
     }

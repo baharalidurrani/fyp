@@ -22,11 +22,10 @@ var ConferenceSchema = new Schema({
         trim: true,
         required: true
     },
-    _reviewers: {
-        type: [Schema.Types.ObjectId],
+    _reviewers: [{
+        type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
-    }
+    }]
 });
 
 var ConferenceModel = mongoose.model('Conference', ConferenceSchema);
