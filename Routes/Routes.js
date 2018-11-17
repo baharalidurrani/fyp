@@ -51,7 +51,7 @@ Router.get('/paper', Auth.islogin, Paper.get);
 //post
 
 //assign reviewers for a paper
-// Router.get('/assign', Auth.islogin, Assign.get);
+Router.get('/assign', Auth.islogin, Assign.get);
 Router.post('/assign', Auth.islogin, Assign.post);
 
 Router.get('/upload', Auth.islogin, Upload.get);
