@@ -15,27 +15,30 @@
             <br>
 
             <ul class="collapsible popout">
-                <%for(var i=0;i<4;i++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <%if(i==1){%>
+                            <%if(Papers[i]._status==='accepted'){%>
                             <i class="material-icons green-text tooltipped" data-tooltip="Accepted">done_outlined</i>
-                            <%}else if(i==2){%>
+                            <%}else if(Papers[i]._status==='rejected'){%>
                             <i class="material-icons red-text tooltipped" data-tooltip="Rejected">clear</i>
-                            <%}else if(i==3){%>
+                            <%}else if(Papers[i]._status==='published'){%>
                             <i class="material-icons blue-text tooltipped" data-tooltip="Published">cloud_upload</i>
                             <%}else{%>
                             <i class="material-icons purple-text tooltipped" data-tooltip="Pending">error</i>
                             <%}%>
-                            <p class="flow-text col s6 l8">GNU System GNU System GNU System</p>
+                            <p class="flow-text col s6 l8">
+                                <%=Papers[i]._title%>
+                            </p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
                         <blockquote>
-                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Introduction: </b>
+                                <%=Papers[i]._intro%>
+                            </p>
                         </blockquote>
                         <blockquote>
                             <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
