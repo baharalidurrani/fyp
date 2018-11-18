@@ -25,13 +25,16 @@
                         </div>
                     </div>
                 </li>
-                <%for(var i=1;i<4;i++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header">
-                            <span class="col s3"><b>GNU System</b></span>
-                            <span class="col s3">Richard Stallman</span>
-                            <span class="col s3">Accepted</span>
+                            <span class="col s3"><b>
+                                    <%=Papers[i]._title%></b></span>
+                            <span class="col s3">
+                                <%=Papers[i]._author%></span>
+                            <span class="col s3">
+                                <%=Papers[i]._status%></span>
                             <a class="col s3 z-depth-0 waves-effect waves-light btn-small">Review</a>
                         </div>
                     </div>
