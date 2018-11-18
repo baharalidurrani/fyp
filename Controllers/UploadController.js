@@ -18,7 +18,8 @@ exports.post = (req, res) => {
         _author: req.user._id,
         _intro: req.body.INTRO,
         _file: req.body.FILE,
-        _conference: req.body.CONFERENCE
+        _conference: req.body.CONFERENCE,
+        _status: 'pending'
     });
     paperModel.save().then(() => {
         console.log('paper uploaded successfuly');
