@@ -52,5 +52,3 @@ app.use(function (req, res, next) {
 
 //fetch routes
 app.use(require('./Routes/Routes'));
-
-//push commit
