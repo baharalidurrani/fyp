@@ -14,7 +14,10 @@ exports.post = (req, res) => {
                 Paper: paper
             });
         });
-    });
+    }).catch((err) => {
+        console.log(err);
+        res.redirect('/');
+    })
 }
 
 exports.assigning = (req, res) => {
