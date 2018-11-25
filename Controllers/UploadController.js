@@ -19,7 +19,7 @@ exports.post = (req, res) => {
         _intro: req.body.INTRO,
         _file: req.body.FILE,
         _conference: req.body.CONFERENCE,
-        _status: 'pending'
+        _status: 'unassigned'
     });
     paperModel.save().then(() => {
         console.log('paper uploaded successfuly');

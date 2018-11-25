@@ -25,8 +25,10 @@
                             <i class="material-icons red-text tooltipped" data-tooltip="Rejected">clear</i>
                             <%}else if(Papers[i]._status==='published'){%>
                             <i class="material-icons blue-text tooltipped" data-tooltip="Published">cloud_upload</i>
+                            <%}else if(Papers[i]._status==='assigned'){%>
+                            <i class="material-icons green-text tooltipped" data-tooltip="Assigned">error</i>
                             <%}else{%>
-                            <i class="material-icons purple-text tooltipped" data-tooltip="Pending">error</i>
+                            <i class="material-icons purple-text tooltipped" data-tooltip="Unassigned">error</i>
                             <%}%>
                             <p class="flow-text col s6 l8">
                                 <%=Papers[i]._title%>
