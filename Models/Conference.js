@@ -24,7 +24,7 @@ var ConferenceSchema = new Schema({
     },
     _reviewers: [{
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'User'
     }]
 });
 
