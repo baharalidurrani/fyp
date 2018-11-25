@@ -15,12 +15,13 @@
             <div class="row">
                 <div class="card col s12 m8 push-m2 hoverable">
                     <div class="card-content center">
-                        <span class="card-title">The GNU System</span>
-                        <form method="POST" action="/assign">
+                        <span class="card-title">
+                            <%=Paper._title%></span>
+                        <form method="POST" action="/assigning">
                             <%for(var i=0; i<Reviewers.length; i++){%>
                             <br>
                             <label class="marginAll">
-                                <input name="reviewer" value="<%=i%>" type="checkbox" />
+                                <input name="reviewer" value="<%=Reviewers[i]._id%>" type="checkbox" />
                                 <span class="marginAll">
                                     <%=Reviewers[i]._name%></span>
                             </label>
@@ -29,7 +30,7 @@
                             <br>
                             <div class="marginAll">
                                 <button class="btn waves-effect waves-light themeAccent z-depth-0 btn fullw" type="submit"
-                                    name="action">Assign Reviewers</button>
+                                    name="PAPER" value=<%=Paper._id%>>Assign Reviewers</button>
                             </div>
                         </form>
                     </div>

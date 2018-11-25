@@ -37,6 +37,7 @@
                         </blockquote>
                         <form method="POST" action="/assign">
                             <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
                                 <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
                                     type="submit" name="CONFERENCE" value="<%=Papers[i]._conference%>">Assign Reviewers</button>
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
