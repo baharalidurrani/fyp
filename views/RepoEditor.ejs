@@ -14,32 +14,38 @@
         <p class="themePrimary white-text center flow-text">Unassigned</p>
         <div class="container">
             <ul class="collapsible popout">
-                <%for(var i=0;i<4;i++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
+                <%if(Papers[i]._status=='unassigned'){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._title%>
+                            </p>
                             <p class="flow-text col s1"> | </p>
-                            <p class="flow-text col s5">Richard Stallman</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._author%>
+                            </p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
                         <blockquote>
-                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Introduction:</b>
+                                <%=Papers[i]._intro%>
+                            </p>
                         </blockquote>
                         <form method="POST" action="/assign">
                             <div class="center">
                                 <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
-                                    type="submit" name="CONFERENCE" value="5bec76b13fb7ca4ced0dcc22">Assign Reviewers</button>
+                                    type="submit" name="CONFERENCE" value="<%=Papers[i]._conference%>">Assign Reviewers</button>
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>
                         </form>
                     </div>
                 </li>
-                <%}%>
+                <%}}%>
             </ul>
         </div>
         <br>
@@ -47,20 +53,26 @@
         <p class="themePrimary white-text center flow-text">Assigned</p>
         <div class="container">
             <ul class="collapsible popout">
-                <%for(var j=0;j<4;j++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
+                <%if(Papers[i]._status=='assigned'){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._title%>
+                            </p>
                             <p class="flow-text col s1"> | </p>
-                            <p class="flow-text col s5">Richard Stallman</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._author%>
+                            </p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
                         <blockquote>
-                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Introduction:</b>
+                                <%=Papers[i]._intro%>
+                            </p>
                         </blockquote>
                         <blockquote>
                             <p class="flow-text"><b>Reviewer 1:</b> sit amet, consectetur adipiscing elit, sed do
@@ -94,7 +106,7 @@
                         </form>
                     </div>
                 </li>
-                <%}%>
+                <%}}%>
             </ul>
         </div>
         <br>
@@ -102,20 +114,26 @@
         <p class="themePrimary white-text center flow-text">Accepted</p>
         <div class="container">
             <ul class="collapsible popout">
-                <%for(var k=0;k<4;k++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
+                <%if(Papers[i]._status=='accepted'){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._title%>
+                            </p>
                             <p class="flow-text col s1"> | </p>
-                            <p class="flow-text col s5">Richard Stallman</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._author%>
+                            </p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
                         <blockquote>
-                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Introduction:</b>
+                                <%=Papers[i]._intro%>
+                            </p>
                         </blockquote>
                         <blockquote>
                             <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
@@ -136,7 +154,7 @@
                         </div>
                     </div>
                 </li>
-                <%}%>
+                <%}}%>
             </ul>
         </div>
         <br>
@@ -144,20 +162,26 @@
         <p class="themePrimary white-text center flow-text">Rejected</p>
         <div class="container">
             <ul class="collapsible popout">
-                <%for(var l=0;l<4;l++){%>
+                <%for(var i=0;i<Papers.length;i++){%>
+                <%if(Papers[i]._status=='rejected'){%>
                 <li class="btnClose white">
                     <div class="row">
                         <div class="collapsible-header valign-wrapper">
-                            <p class="flow-text col s5">GNU System GNU System</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._title%>
+                            </p>
                             <p class="flow-text col s1"> | </p>
-                            <p class="flow-text col s5">Richard Stallman</p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._author%>
+                            </p>
                             <a class="z-depth-0 waves-effect waves-light btn-small">Details</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
                         <blockquote>
-                            <p class="flow-text"><b>Introduction:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Introduction:</b>
+                                <%=Papers[i]._intro%>
+                            </p>
                         </blockquote>
                         <blockquote>
                             <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
@@ -178,7 +202,7 @@
                         </div>
                     </div>
                 </li>
-                <%}%>
+                <%}}%>
             </ul>
         </div>
         <br>

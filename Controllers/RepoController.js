@@ -6,6 +6,9 @@ exports.get = (req, res) => {
             _status: {
                 $ne: 'published'
             }
+
+            //.lean() is used to trim extra details returned by the query
+            //https://stackoverflow.com/questions/32397419/model-findone-not-returning-docs-but-returning-a-wrapper-object
         }).populate('_author').lean().then((papers) => {
 
             //intercepting data before sending it to the client side
