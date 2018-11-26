@@ -21,5 +21,22 @@ exports.post = (req, res) => {
 }
 
 exports.assigning = (req, res) => {
-    console.log(req.body);
+    //check is no checkbox is clicked
+    if (req.body.REVIEWERS != undefined) {
+        var paper = req.body.PAPER;
+        var reviewers = [];
+
+        //check if only one checkbox is clicked 
+        if (Array.isArray(req.body.REVIEWERS))
+            reviewers = req.body.REVIEWERS;
+        //convert single variable into array
+        else
+            reviewers[0] = req.body.REVIEWERS;
+
+        console.log('paper');
+        console.log(paper);
+        console.log('reviewers');
+        console.log(reviewers);
+    } else
+        res.redirect('/repo');
 }
