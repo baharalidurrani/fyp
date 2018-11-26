@@ -45,7 +45,7 @@ exports.assigning = (req, res) => {
                 _reviewer: reviewers[i]
             });
             reviewModel.save().then((temp) => {
-                // console.log(temp);
+                console.log(temp);
                 reviewerIDs.push(temp);
             }).catch((err) => {
                 console.log(err);
