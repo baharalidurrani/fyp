@@ -3,6 +3,7 @@ const body_parser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
+
 const Mongostore = require('connect-mongo')(session);
 require('./config/passport_config');
 
@@ -17,7 +18,9 @@ app.listen(port, () => {
 
 //connection with mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect(URI).then(() => {
+mongoose.connect(URI, {
+    useNewUrlParser: true
+}).then(() => {
     console.log('Database Connnected');
 }).catch((err) => {
     console.log(err);

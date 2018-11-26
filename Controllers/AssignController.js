@@ -1,6 +1,8 @@
 const ConferenceModel = require('../Models/Conference');
 const PaperModel = require('../Models/Paper');
 const UserModel = require('../Models/User');
+const ReviewModel = require('../Models/Review');
+
 
 // exports.get = (req, res) => {
 //     res.render('Assign');
@@ -33,10 +35,29 @@ exports.assigning = (req, res) => {
         else
             reviewers[0] = req.body.REVIEWERS;
 
-        console.log('paper');
-        console.log(paper);
-        console.log('reviewers');
-        console.log(reviewers);
+        //assigning reviewers//////////////////////////////////////////
+
+        var reviewerIDs = [];
+
+        for (var i = 0; i < reviewers.length; i++) {
+            var reviewModel = new ReviewModel({
+                _paper: paper,
+                _reviewer: reviewers[i]
+            });
+            reviewModel.save().then((temp) => {
+                // console.log(temp);
+                reviewerIDs.push(temp);
+            }).catch((err) => {
+                console.log(err);
+            });
+        }
+        console.log(reviewerIDs);
+        //////////////////////////////////////////////////////////////
+
+        PaperModel.findByIdAndUpdate(paper).then((dbPaper) => {
+            console.log(dbPaper);
+        });
+
     } else
         res.redirect('/repo');
 }
