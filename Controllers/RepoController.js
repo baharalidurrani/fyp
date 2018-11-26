@@ -17,7 +17,6 @@ exports.get = (req, res) => {
                 papers[i]._author = papers[i]._author._name;
             }
 
-            console.log(papers);
             res.render('RepoEditor', {
                 Papers: papers
             });
