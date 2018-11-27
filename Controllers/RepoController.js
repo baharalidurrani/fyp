@@ -9,14 +9,14 @@ exports.get = (req, res) => {
 
             //.lean() is used to trim extra details returned by the query
             //https://stackoverflow.com/questions/32397419/model-findone-not-returning-docs-but-returning-a-wrapper-object
-        }).populate('_author').lean().then((papers) => {
+        }).populate('_author').populate('_reviews').lean().then((papers) => {
 
             //intercepting data before sending it to the client side
             for (var i = 0; i < papers.length; i++) {
                 //replacing the whole User object by only its _name
                 papers[i]._author = papers[i]._author._name;
             }
-
+            console.log(papers);
             res.render('RepoEditor', {
                 Papers: papers
             });

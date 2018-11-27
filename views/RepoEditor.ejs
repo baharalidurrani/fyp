@@ -75,27 +75,18 @@
                                 <%=Papers[i]._intro%>
                             </p>
                         </blockquote>
+
+                        <%for(var j=0;j<Papers[i]._reviews.length;j++){%>
                         <blockquote>
-                            <p class="flow-text"><b>Reviewer 1:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
-                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
-                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
+                            <p class="flow-text"><b>Reviewer
+                                    <%=j+1%>:</b>
+                                <%=Papers[i]._reviews[j]._comment4author%>
+                            </p>
+                            <p><b>Notes:</b>
+                                <%=Papers[i]._reviews[j]._comment4editor%>
+                            </p>
                         </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Reviewer 2:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
-                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
-                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
-                        </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Reviewer 3:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <p><b>Notes:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit
-                                cupiditate. Excepturi eum officia maiores, asperiores similique id ducimus eaque magnam
-                                aut quas blanditiis amet odit et? Atque, mollitia harum.</p>
-                        </blockquote>
+                        <%}%>
 
                         <form method="POST" action="/paper">
                             <div class="center">
@@ -137,18 +128,14 @@
                                 <%=Papers[i]._intro%>
                             </p>
                         </blockquote>
+                        <%for(var k=0;k<Papers[i]._reviews.length;k++){%>
                         <blockquote>
-                            <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Reviewer
+                                    <%=k+1%>:</b>
+                                <%=Papers[i]._reviews[k]._comment4author%>
+                            </p>
                         </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 2:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 3:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
+                        <%}%>
 
                         <div class="center">
                             <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
@@ -185,18 +172,14 @@
                                 <%=Papers[i]._intro%>
                             </p>
                         </blockquote>
+                        <%for(var l=0;l<Papers[i]._reviews.length;l++){%>
                         <blockquote>
-                            <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Reviewer
+                                    <%=l+1%>:</b>
+                                <%=Papers[i]._reviews[l]._comment4author%>
+                            </p>
                         </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 2:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 3:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
+                        <%}%>
 
                         <div class="center">
                             <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
