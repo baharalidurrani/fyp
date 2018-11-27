@@ -35,29 +35,42 @@ exports.assigning = (req, res) => {
         else
             reviewers[0] = req.body.REVIEWERS;
 
-        //assigning reviewers//////////////////////////////////////////
-
-        var reviewerIDs = [];
-
+        //arranging JSON array for ReviewModel.insertMany//////////////////////////
+        var dataArray = new Array();
         for (var i = 0; i < reviewers.length; i++) {
-            var reviewModel = new ReviewModel({
-                _paper: paper,
-                _reviewer: reviewers[i]
-            });
-            reviewModel.save().then((temp) => {
-                // console.log(temp);
-                reviewerIDs.push(temp);
-            }).catch((err) => {
-                console.log(err);
-            });
+            var jsonArg = new Object();
+            jsonArg._paper = paper;
+            jsonArg._reviewer = reviewers[i];
+            dataArray.push(jsonArg);
         }
-        console.log(reviewerIDs);
-        //////////////////////////////////////////////////////////////
 
-        PaperModel.findByIdAndUpdate(paper).then((dbPaper) => {
-            console.log(dbPaper);
+        ReviewModel.insertMany(dataArray, function (error, docs) {
+            if (error) {
+                console.log(error);
+                res.redirect('/');
+            } else {
+                var reviewerIDs = [];
+                for (var j = 0; j < docs.length; j++) {
+                    reviewerIDs.push(docs[j]._id);
+                }
+                //deprecated
+                PaperModel.findOneAndUpdate({
+                    _id: paper
+                }, {
+                    _reviews: reviewerIDs
+                }).then((dbPaper) => {
+                    dbPaper._reviews = reviewerIDs;
+                    console.log('reviewers added for paper');
+                    console.log(dbPaper);
+                    res.redirect('/repo');
+                }).catch((err) => {
+                    console.log(err);
+                    console.log('problem updating paper reviewers')
+                });
+            }
         });
-
-    } else
-        res.redirect('/repo');
+    } else {
+        console.log('no reviewer selected for assigning');
+        res.redirect('/');
+    }
 }
