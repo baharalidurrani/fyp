@@ -3,11 +3,6 @@ const PaperModel = require('../Models/Paper');
 const UserModel = require('../Models/User');
 const ReviewModel = require('../Models/Review');
 
-
-// exports.get = (req, res) => {
-//     res.render('Assign');
-// }
-
 exports.post = (req, res) => {
     PaperModel.findById(req.body.PAPER).then((paper) => {
         ConferenceModel.findById(req.body.CONFERENCE).populate('_reviewers').then((data) => {
