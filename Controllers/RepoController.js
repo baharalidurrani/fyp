@@ -38,8 +38,7 @@ exports.get = (req, res) => {
     } else if (req.user._loggedAs == 'author') {
         PaperModel.find({
             _author: req.user._id
-        }).then((papers) => {
-            console.log(papers);
+        }).populate('_reviews').then((papers) => {
             res.render('RepoAuthor', {
                 Papers: papers
             });

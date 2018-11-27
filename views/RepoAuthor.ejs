@@ -42,18 +42,14 @@
                                 <%=Papers[i]._intro%>
                             </p>
                         </blockquote>
+                        <%for(var j=0;j<Papers[i]._reviews.length;j++){%>
                         <blockquote>
-                            <p class="flow-text"><b>Review 1:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="flow-text"><b>Reviewer
+                                    <%=j+1%>:</b>
+                                <%=Papers[i]._reviews[j]._comment4author%>
+                            </p>
                         </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 2:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
-                        <blockquote>
-                            <p class="flow-text"><b>Review 3:</b> sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </blockquote>
+                        <%}%>
 
                         <form method="POST" action="/delete">
                             <div class="center">
