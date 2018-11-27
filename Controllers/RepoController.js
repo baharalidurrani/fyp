@@ -1,4 +1,5 @@
 const PaperModel = require('../Models/Paper');
+const ReviewModel = require('../Models/Review');
 
 exports.get = (req, res) => {
     if (req.user._loggedAs == 'editor') {
@@ -24,12 +25,21 @@ exports.get = (req, res) => {
             res.redirect('/');
         });
     } else if (req.user._loggedAs == 'reviewer') {
-        PaperModel.find({
-            _reviews: req.user._id
-        }).then((papers) => {
-            console.log(papers);
+        ReviewModel.find({
+            _reviewer: req.user._id
+        }).populate('_paper').then((reviews) => {
+            for (var j = 0; j < reviews.length; j++) {
+                var obj = {
+                    _id: reviews[j]._paper._id,
+                    _title: reviews[j]._paper._title,
+                    _file: reviews[j]._paper._file,
+                    _intro: reviews[j]._paper._intro,
+                }
+                reviews[j] = obj;
+            }
+            console.log(reviews);
             res.render('RepoReviewer', {
-                Papers: papers
+                Papers: reviews
             });
         }).catch((err) => {
             console.log(err);

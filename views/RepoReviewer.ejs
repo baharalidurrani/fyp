@@ -15,30 +15,20 @@
             <br>
 
             <ul class="collapsible popout">
-                <li class="white">
-                    <div class="row">
-                        <div>
-                            <h6 class="col s3"><b>Topic</b></h6>
-                            <h6 class="col s3"><b>Author</b>(s)</h6>
-                            <h6 class="col s3"><b>Status</b></h6>
-                            <h6 class="col s3"></h6>
-                        </div>
-                    </div>
-                </li>
                 <%for(var i=0;i<Papers.length;i++){%>
                 <li class="btnClose white">
                     <div class="row">
-                        <div class="collapsible-header">
-                            <span class="col s3"><b>
-                                    <%=Papers[i]._title%></b></span>
-                            <span class="col s3">
-                                <%=Papers[i]._author%></span>
-                            <span class="col s3">
-                                <%=Papers[i]._status%></span>
-                            <a class="col s3 z-depth-0 waves-effect waves-light btn-small">Review</a>
+                        <div class="collapsible-header valign-wrapper">
+                            <p class="flow-text col s9">
+                                <%=Papers[i]._title%>
+                            </p>
+                            <a class="z-depth-0 waves-effect waves-light btn-small">Review</a>
                         </div>
                     </div>
                     <div class="btnClose collapsible-body">
+                        <p class="flow-text">Introduction:
+                            <%=Papers[i]._intro%>
+                        </p>
                         <form method="POST" action="/upload">
                             <div class="input-field">
                                 <textarea id="textarea" class="materialize-textarea" data-length="325" name="FORAUTHOR"
