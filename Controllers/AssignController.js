@@ -57,7 +57,8 @@ exports.assigning = (req, res) => {
                 PaperModel.findOneAndUpdate({
                     _id: paper
                 }, {
-                    _reviews: reviewerIDs
+                    _reviews: reviewerIDs,
+                    _status: 'assigned'
                 }).then((dbPaper) => {
                     dbPaper._reviews = reviewerIDs;
                     console.log('reviewers added for paper');
