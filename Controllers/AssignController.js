@@ -62,7 +62,7 @@ exports.assigning = (req, res) => {
                 }).then((dbPaper) => {
                     dbPaper._reviews = reviewerIDs;
                     console.log('reviewers added for paper');
-                    console.log(dbPaper);
+                    console.log(dbPaper._title);
                     res.redirect('/repo');
                 }).catch((err) => {
                     console.log(err);
