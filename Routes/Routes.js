@@ -48,7 +48,7 @@ Router.get('/repo', Auth.islogin, Repo.get);
 //post
 
 Router.get('/paper', Auth.islogin, Paper.get);
-//post
+Router.post('/paper', Auth.islogin, Paper.post);
 
 //assign reviewers for a paper
 // Router.get('/assign', Auth.islogin, Assign.get);

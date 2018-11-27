@@ -99,9 +99,10 @@
 
                         <form method="POST" action="/paper">
                             <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
                                 <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
-                                <button type="submit" name="AS" value="accept" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
-                                <button type="submit" name="AS" value="reject" class="red z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
+                                <button type="submit" name="STATUS" value="accepted" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
+                                <button type="submit" name="STATUS" value="rejected" class="red z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>
                         </form>
