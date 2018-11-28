@@ -13,6 +13,7 @@ const Assign = require('../Controllers/AssignController');
 const Upload = require('../Controllers/UploadController');
 const Approval = require('../Controllers/ApprovalController');
 const Conference = require('../Controllers/ConferenceController');
+const Review = require('../Controllers/ReviewController');
 
 const Auth = require('../Middleware/passport_auth');
 
@@ -62,3 +63,6 @@ Router.post('/upload', Auth.islogin, Upload.post);
 
 Router.get('/conference', Auth.islogin, Conference.get);
 Router.post('/conference', Auth.islogin, Conference.post);
+
+//record reviewer remarks
+Router.post('/review', Auth.islogin, Review.post);
