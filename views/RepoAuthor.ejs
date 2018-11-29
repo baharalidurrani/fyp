@@ -14,6 +14,10 @@
         <div class="container">
             <br>
 
+            <%if(Papers.length==0){%>
+            <p class="flow-text">Papers repository currenty empty...</p>
+            <%}%>
+
             <ul class="collapsible popout">
                 <%for(var i=0;i<Papers.length;i++){%>
                 <li class="btnClose white">
