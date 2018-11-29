@@ -37,7 +37,7 @@ exports.get = (req, res) => {
                 }
                 reviews[j] = obj;
             }
-            console.log(reviews);
+            // console.log(reviews);
             res.render('RepoReviewer', {
                 Papers: reviews
             });

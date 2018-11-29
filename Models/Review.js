@@ -7,7 +7,6 @@ var ReviewSchema = new Schema({
         ref: 'Paper'
     },
     _reviewer: {
-        unique: true,
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
