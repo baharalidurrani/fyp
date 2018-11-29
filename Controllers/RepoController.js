@@ -17,7 +17,6 @@ exports.get = (req, res) => {
                 //replacing the whole User object by only its _name
                 papers[i]._author = papers[i]._author._name;
             }
-            // console.log(papers);
             res.render('RepoEditor', {
                 Papers: papers
             });
