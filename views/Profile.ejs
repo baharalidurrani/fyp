@@ -21,12 +21,13 @@
                             <div class="center">
                                 <%for(var i=0;i<User._rolesApproved.length;i++){%>
                                 <label class="marginAll">
-                                    <input name="AS" value="<%=User._rolesApproved[i]%>" name="group1" type="radio" />
+                                    <input name="AS" value="<%=User._rolesApproved[i]%>" checked name="group1" type="radio" />
                                     <span>
                                         <%=User._rolesApproved[i]%></span>
                                 </label>
                                 <%}%>
-                                <button type="submit" class="z-depth-0 waves-effect waves-light btn marginAll">Login</button>
+                                <br><br>
+                                <button type="submit" class="z-depth-0 waves-effect waves-light btn marginAll fullw">Re-Login</button>
                             </div>
                         </form>
                     </div>

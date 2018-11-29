@@ -26,7 +26,8 @@ exports.get = (req, res) => {
         });
     } else if (req.user._loggedAs == 'reviewer') {
         ReviewModel.find({
-            _reviewer: req.user._id
+            _reviewer: req.user._id,
+            _tempStatus: null
         }).populate('_paper').then((reviews) => {
             for (var j = 0; j < reviews.length; j++) {
                 var obj = {
