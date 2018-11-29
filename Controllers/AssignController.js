@@ -36,6 +36,9 @@ exports.assigning = (req, res) => {
             var jsonArg = new Object();
             jsonArg._paper = paper;
             jsonArg._reviewer = reviewers[i];
+            jsonArg._comment4author = 'NOT REVIEWED YET';
+            jsonArg._comment4editor = 'NOT REVIEWED YET';
+            jsonArg._tempStatus = 'NOT REVIEWED YET';
             dataArray.push(jsonArg);
         }
 

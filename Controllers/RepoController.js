@@ -17,6 +17,7 @@ exports.get = (req, res) => {
                 //replacing the whole User object by only its _name
                 papers[i]._author = papers[i]._author._name;
             }
+            // console.log(papers);
             res.render('RepoEditor', {
                 Papers: papers
             });
@@ -27,7 +28,7 @@ exports.get = (req, res) => {
     } else if (req.user._loggedAs == 'reviewer') {
         ReviewModel.find({
             _reviewer: req.user._id,
-            _tempStatus: null
+            _tempStatus: 'NOT REVIEWED YET'
         }).populate('_paper').then((reviews) => {
             for (var j = 0; j < reviews.length; j++) {
                 var obj = {
