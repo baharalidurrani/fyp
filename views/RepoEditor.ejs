@@ -140,10 +140,14 @@
                         </blockquote>
                         <%}%>
 
-                        <div class="center">
-                            <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
-                            <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
-                        </div>
+                        <form method="POST" action="/paper">
+                            <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[k]._id%>" />
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                                <button type="submit" name="STATUS" value="published" class="z-depth-0 waves-effect waves-light btn-small marginAll">Publish</button>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
                     </div>
                 </li>
                 <%}}%>
