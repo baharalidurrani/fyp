@@ -14,93 +14,98 @@
         <h4 class="themePrimary white-text center">Up Comming Conferences</h4>
 
         <div class="container">
+            <div class="row">
+                <%for(var i=0;i<Conferences.length;i++){%>
+                <%if(i%2==1){%>
+                <div class="col m8 push-m4 card hoverable">
+                    <%}else{%>
+                    <div class="col m8 card hoverable">
+                        <%}%>
+                        <div class="card-content">
+                            <span class="card-title center">
+                                <b>
+                                    <p class="flow-text">
+                                        <%=Conferences[i]._name%>
+                                    </p>
+                                </b>
+                            </span>
+                            <div class="card-content">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Date to be held:</td>
+                                            <td>
+                                                <%=Conferences[i]._date%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Papers Submission Deadline:</td>
 
-            <%for(var i=0;i<Conferences.length;i++){%>
-            <div class="card hoverable">
-                <div class="card-content">
-                    <span class="card-title center">
-                        <b>
-                            <p class="flow-text">
-                                <%=Conferences[i]._name%>
-                            </p>
-                        </b>
-                    </span>
-                    <div class="card-content">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Date to be held:</td>
-                                    <td>
-                                        <%=Conferences[i]._date%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Papers Submission Deadline:</td>
+                                            <td class="red-text">
+                                                <%=Conferences[i]._deadline%>
+                                            </td>
 
-                                    <td class="red-text">
-                                        <%=Conferences[i]._deadline%>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>Location:</td>
-                                    <td>
-                                        <%=Conferences[i]._location%>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <form method="GET" action="/upload">
-                        <div class="center">
-                            <button type="submit" name="CONFERENCE" value="<%=Conferences[i]._id%>" class="z-depth-0 waves-effect waves-light btn-small marginAll">Submit
-                                Paper</button>
+                                        </tr>
+                                        <tr>
+                                            <td>Location:</td>
+                                            <td>
+                                                <%=Conferences[i]._location%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <form method="GET" action="/upload">
+                                <div class="center">
+                                    <button type="submit" name="CONFERENCE" value="<%=Conferences[i]._id%>" class="z-depth-0 waves-effect waves-light btn-small marginAll">Submit
+                                        Paper</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+                    <%}%>
                 </div>
             </div>
-            <%}%>
-        </div>
-        <br>
+            <br>
 
-        <h4 class="themePrimary white-text center">Recent Publications</h4>
-        <div class="container">
-            <ul class="collapsible popout">
-                <%for(var i=0;i<Papers.length;i++){%>
-                <li class="btnClose white">
-                    <div class="row">
-                        <div class="collapsible-header valign-wrapper">
-                            <p class="flow-text col s5">
-                                <%=Papers[i]._title%>
-                            </p>
-                            <p class="flow-text col s1"> | </p>
-                            <p class="flow-text col s5">
-                                <%=Papers[i]._author%>
-                            </p><i class="material-icons">keyboard_arrow_down</i>
+            <h4 class="themePrimary white-text center">Recent Publications</h4>
+            <div class="container">
+                <ul class="collapsible popout">
+                    <%for(var i=0;i<Papers.length;i++){%>
+                    <li class="btnClose white">
+                        <div class="row">
+                            <div class="collapsible-header valign-wrapper">
+                                <p class="flow-text col s5">
+                                    <%=Papers[i]._title%>
+                                </p>
+                                <p class="flow-text col s1"> | </p>
+                                <p class="flow-text col s5">
+                                    <%=Papers[i]._author%>
+                                </p><i class="material-icons">keyboard_arrow_down</i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="btnClose collapsible-body">
-                        <blockquote>
-                            <p class="flow-text"><b>Introduction:</b>
-                                <%=Papers[i]._intro%>
-                            </p>
-                        </blockquote>
+                        <div class="btnClose collapsible-body">
+                            <blockquote>
+                                <p class="flow-text"><b>Introduction:</b>
+                                    <%=Papers[i]._intro%>
+                                </p>
+                            </blockquote>
 
-                        <div class="center">
-                            <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
-                            <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            <div class="center">
+                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                                <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <%}%>
-            </ul>
-        </div>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
 
-        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <% include ./Layout/Footer.ejs %>
-    </div>
-    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
-    <% include ./Layout/ScriptTag.ejs %>
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <% include ./Layout/Footer.ejs %>
+        </div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/ScriptTag.ejs %>
 
 </body>
 
