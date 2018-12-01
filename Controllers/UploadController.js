@@ -2,20 +2,24 @@ const ConferenceModel = require('../Models/Conference');
 const PaperModel = require('../Models/Paper');
 
 exports.get = (req, res) => {
-    if (req.query.CONFERENCE == undefined) {
-        ConferenceModel.find().then((conferences) => {
-            res.render('Upload', {
-                Conferences: conferences
-            });
-        }).catch((err) => console.log(err));
+    if (req.user._loggedAs == 'author') {
+        if (req.query.CONFERENCE == undefined) {
+            ConferenceModel.find().then((conferences) => {
+                res.render('Upload', {
+                    Conferences: conferences
+                });
+            }).catch((err) => console.log(err));
+        } else {
+            ConferenceModel.find({
+                _id: req.query.CONFERENCE
+            }).then((conferences) => {
+                res.render('Upload', {
+                    Conferences: conferences
+                });
+            }).catch((err) => console.log(err));
+        }
     } else {
-        ConferenceModel.find({
-            _id: req.query.CONFERENCE
-        }).then((conferences) => {
-            res.render('Upload', {
-                Conferences: conferences
-            });
-        }).catch((err) => console.log(err));
+        res.redirect('/profile');
     }
 }
 
