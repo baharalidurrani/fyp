@@ -11,97 +11,89 @@
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <br>
+        <h4 class="themePrimary white-text center">Up Comming Conferences</h4>
+
         <div class="container">
-            <div class="row">
-                <div class="card hoverable col s12 m8 l6 push-m2 push-l3">
+
+            <%for(var i=0;i<Conferences.length;i++){%>
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title center">
+                        <b>
+                            <p class="flow-text">
+                                <%=Conferences[i]._name%>
+                            </p>
+                        </b>
+                    </span>
                     <div class="card-content">
-                        <span class="card-title center">Up Comming Conference</span>
-                        <div class="card-content">
-                            <p class="center"><i class="material-icons">date_range</i> Monday, December 31st, 2018</p>
-                            <p class="center"><i class="material-icons">location_on</i> Quaid-e-Azam Auditorium</p>
-                            <br>
-                        </div>
-                        <div class="center">
-                            <a href="/register" class="waves-effect waves-light themeAccent btn-small z-depth-0 pulse">Register</a>
-                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Date to be held:</td>
+                                    <td>
+                                        <%=Conferences[i]._date%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Papers Submission Deadline:</td>
+
+                                    <td class="red-text">
+                                        <%=Conferences[i]._deadline%>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>Location:</td>
+                                    <td>
+                                        <%=Conferences[i]._location%>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <form method="GET" action="/upload">
+                        <div class="center">
+                            <button type="submit" name="CONFERENCE" value="<%=Conferences[i]._id%>" class="z-depth-0 waves-effect waves-light btn-small marginAll">Submit
+                                Paper</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <%}%>
         </div>
+        <br>
 
         <h4 class="themePrimary white-text center">Recent Publications</h4>
         <div class="container">
-            <div class="row">
-
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable">
-                        <div class="card-content black-text">
-                            <span class="card-title"><a target="_blank" href="https://material.io/" class="black-text">Material
-                                    Design</a></span>
-                            <p>Material Design is a visual language that synthesizes the classic principles of good
-                                design
-                                with the innovation of technology and science. Material Design is inspired by the
-                                physical
-                                world and its textures, including how they reflect light and cast shadows. Material
-                                surfaces reimagine the mediums of paper and ink.</p>
-                        </div>
-                        <div class="card-action">
-                            <div class="row">
-                                <a target="_blank" href="https://material.io/" class="col black-text">Read More</a>
-                                <span class="col black-text">|</span>
-                                <a target="_blank" href="https://design.google/" class="col black-text">Google</a>
-                            </div>
+            <ul class="collapsible popout">
+                <%for(var i=0;i<Papers.length;i++){%>
+                <li class="btnClose white">
+                    <div class="row">
+                        <div class="collapsible-header valign-wrapper">
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._title%>
+                            </p>
+                            <p class="flow-text col s1"> | </p>
+                            <p class="flow-text col s5">
+                                <%=Papers[i]._author%>
+                            </p><i class="material-icons">keyboard_arrow_down</i>
                         </div>
                     </div>
-                </div>
+                    <div class="btnClose collapsible-body">
+                        <blockquote>
+                            <p class="flow-text"><b>Introduction:</b>
+                                <%=Papers[i]._intro%>
+                            </p>
+                        </blockquote>
 
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable">
-                        <div class="card-content black-text">
-                            <span class="card-title"><a target="_blank" href="https://www.gnu.org/home.en.html" class="black-text">The
-                                    GNU
-                                    System</a></span>
-                            <p>GNU is an operating system that is free software—that is, it respects users' freedom.
-                                The
-                                GNU operating system consists of GNU packages (programs specifically released by the
-                                GNU
-                                Project) as well as free software released by third parties. The development of GNU
-                                made it
-                                possible to use a computer without software that would trample your freedom.</p>
-                        </div>
-                        <div class="card-action">
-                            <div class="row">
-                                <a target="_blank" href="https://www.gnu.org/home.en.html" class="black-text col">Read
-                                    More</a>
-                                <span class="col black-text">|</span>
-                                <a target="_blank" href="https://www.gnu.org/philosophy/free-sw.html" class="black-text col">Freedom</a>
-                            </div>
+                        <div class="center">
+                            <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                            <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable">
-                        <div class="card-content black-text">
-                            <span class="card-title"><a target="_blank" href="https://justgetflux.com/research.html"
-                                    class="black-text">f.lux</a></span>
-                            <p>f.lux is a cross-platform computer program that adjusts a display's color temperature
-                                according to location and time of day, offering functional respite for the eyes. The
-                                program is designed to reduce eye strain during night-time use, helping to reduce
-                                disruption of sleep patterns.</p>
-                        </div>
-                        <div class="card-action">
-                            <div class="row">
-                                <a target="_blank" href="https://justgetflux.com/research.html" class="col black-text">Read
-                                    More</a>
-                                <span class="col black-text">|</span>
-                                <a target="_blank" href="https://en.wikipedia.org/wiki/Eye_strain" class="col black-text">Eye
-                                    Strain</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+                <%}%>
+            </ul>
         </div>
 
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
