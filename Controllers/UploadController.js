@@ -31,7 +31,7 @@ exports.post = (req, res) => {
         _title: req.body.TITLE,
         _author: req.user._id,
         _intro: req.body.INTRO,
-        _file: req.body.FILE,
+        _file: req.body.FILEINPUT,
         _conference: req.body.CONFERENCE,
         _status: 'unassigned'
     });
