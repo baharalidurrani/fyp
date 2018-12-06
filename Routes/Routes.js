@@ -14,6 +14,7 @@ const Upload = require('../Controllers/UploadController');
 const Approval = require('../Controllers/ApprovalController');
 const Conference = require('../Controllers/ConferenceController');
 const Review = require('../Controllers/ReviewController');
+const FileUpload=require('../Middleware/upload');
 
 const Auth = require('../Middleware/passport_auth');
 
@@ -59,7 +60,7 @@ Router.post('/assign', Auth.islogin, Assign.post);
 Router.post('/assigning', Auth.islogin, Assign.assigning);
 
 Router.get('/upload', Auth.islogin, Upload.get);
-Router.post('/upload', Auth.islogin, Upload.post);
+Router.post('/upload', Auth.islogin,FileUpload.single('FILEINPUT'), Upload.post);
 
 Router.get('/conference', Auth.islogin, Conference.get);
 Router.post('/conference', Auth.islogin, Conference.post);
