@@ -17,6 +17,10 @@ $(document).ready(function () {
     $('.tooltipped').tooltip();
     $('.datepicker').datepicker();
     $('select').formSelect();
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+    });
     ////////////////////////////////////////////////
 
     var elem = document.querySelector('.collapsible.expandable');
