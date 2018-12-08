@@ -55,9 +55,10 @@
                         </blockquote>
                         <%}%>
 
-                        <form method="POST" action="/delete">
+                        <form method="GET" action="/paper">
                             <div class="center">
-                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
+                                <input type="hidden" name="PAPER" value="<%=Papers[i]._id%>">
+                                <button type="submit" name="AS" value="view" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</button>
                                 <button type="submit" name="AS" value="delete" class="z-depth-0 waves-effect waves-light btn-small marginAll">Delete</button>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
                             </div>

@@ -7,24 +7,24 @@
 
 <body>
     <div id="root" class="g9c27b0">
-
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
         <div class="container">
-            <h4>Paper Topic<a href="/pdf/paper.pdf" class="waves-effect waves-light btn right"><i class="material-icons right">cloud_download
+            <h4>
+                <%=Paper._title%><a href=<%=Paper._path%> class="waves-effect waves-light btn right"><i class="material-icons right">cloud_download
                     </i>Download</a></h4>
         </div>
-        <iframe src="/pdf/paper.pdf" style="width:100%; height:1080px;" frameborder="0"></iframe>
+        <iframe src=<%=Paper._path%> style="width:100%; height:1080px;" frameborder="0"></iframe>
+        <br>
+        <br>
+        <br>
 
-        <br>
-        <br>
-        <br>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <% include ./Layout/Footer.ejs %>
     </div>
     <!-- //////////////////////////////////////////////////////////////////////////////////// -->
     <% include ./Layout/ScriptTag.ejs %>
-
 </body>
 
 </html>

@@ -1,7 +1,19 @@
 const PaperModel = require('../Models/Paper');
 
 exports.get = (req, res) => {
-    res.render('Paper');
+    if (req.query.AS == "delete") {
+        res.redirect('/');
+    } else {
+        //find in db
+        var paper = {
+            _title: "Paper Title",
+            _path: "/pdf/paper.pdf"
+        }
+        //.then
+        res.render('Paper', {
+            Paper: paper
+        });
+    }
 }
 
 exports.post = (req, res) => {
