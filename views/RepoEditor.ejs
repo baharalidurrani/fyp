@@ -40,8 +40,13 @@
                                 <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
                                 <button class="btn waves-effect waves-light themeAccent z-depth-0 btn-small marginAll"
                                     type="submit" name="CONFERENCE" value="<%=Papers[i]._conference%>">Assign Reviewers</button>
-                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
+                        <form method="GET" action="/paper">
+                            <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
+                                <button type="submit" name="AS" value="view" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</button>
                             </div>
                         </form>
                     </div>
@@ -94,10 +99,15 @@
                         <form method="POST" action="/paper">
                             <div class="center">
                                 <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
-                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <button type="submit" name="STATUS" value="accepted" class="z-depth-0 waves-effect waves-light btn-small marginAll">Accept</button>
                                 <button type="submit" name="STATUS" value="rejected" class="red z-depth-0 waves-effect waves-light btn-small marginAll">Reject</button>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
+                        <form method="GET" action="/paper">
+                            <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[i]._id%>" />
+                                <button type="submit" name="AS" value="view" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</button>
                             </div>
                         </form>
                     </div>
@@ -143,9 +153,14 @@
                         <form method="POST" action="/paper">
                             <div class="center">
                                 <input hidden name="PAPER" value="<%=Papers[k]._id%>" />
-                                <a href="/paper" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</a>
                                 <button type="submit" name="STATUS" value="published" class="z-depth-0 waves-effect waves-light btn-small marginAll">Publish</button>
                                 <a onclick="btnClose()" class="z-depth-0 waves-effect waves-light btn-small marginAll">Close</a>
+                            </div>
+                        </form>
+                        <form method="GET" action="/paper">
+                            <div class="center">
+                                <input hidden name="PAPER" value="<%=Papers[k]._id%>" />
+                                <button type="submit" name="AS" value="view" class="z-depth-0 waves-effect waves-light btn-small marginAll">View</button>
                             </div>
                         </form>
                     </div>
