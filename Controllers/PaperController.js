@@ -2,16 +2,28 @@ const PaperModel = require('../Models/Paper');
 
 exports.get = (req, res) => {
     if (req.query.AS == "delete") {
+        if (req.user._loggedAs == "author") {
+            PaperModel.findByIdAndDelete(req.query.PAPER).then((paper) => {
+                console.log(paper + " deleted");
+                res.redirect('/repo');
+            }).catch((err) => {
+                console.log(err);
+                res.redirect('/');
+            });
+        }
+        console.log("postman attack blocked");
         res.redirect('/');
     } else {
-        //find in db
-        var paper = {
-            _title: "Paper Title",
-            _path: "/pdf/paper.pdf"
-        }
-        //.then
-        res.render('Paper', {
-            Paper: paper
+        PaperModel.findById(req.query.PAPER).then((paper) => {
+            console.log(paper);
+            //remove this line when file uploading is complete
+            paper._file = "/pdf/paper.pdf";
+            res.render('Paper', {
+                Paper: paper
+            });
+        }).catch((err) => {
+            console.log(err);
+            res.redirect('/');
         });
     }
 }
