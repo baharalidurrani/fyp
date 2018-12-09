@@ -2,10 +2,10 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './Public/User')
+    cb(null, './views/assets/pdf')
   },
   filename: function (req, file, cb) {
-    cb(null, req.user._id + '-' + Date.now() + '-' + file.originalname)
+    cb(null, req.user._id + '-' + Date.now() + '.pdf')
   }
 })
 

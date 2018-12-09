@@ -19,8 +19,6 @@ exports.get = (req, res) => {
     } else {
         PaperModel.findById(req.query.PAPER).then((paper) => {
             console.log(paper);
-            //remove this line when file uploading is complete
-            paper._file = "/pdf/paper.pdf";
             res.render('Paper', {
                 Paper: paper
             });

@@ -24,18 +24,19 @@ exports.get = (req, res) => {
 }
 
 exports.post = (req, res) => {
-    console.log('new paper uploaded');
-    console.log(req.body);
+    console.log('new paper uploading');
+    console.log(req.file);
 
     var paperModel = new PaperModel({
         _title: req.body.TITLE,
         _author: req.user._id,
         _intro: req.body.INTRO,
-        _file: req.body.FILEINPUT,
+        _file: '/pdf/' + req.file.filename,
         _conference: req.body.CONFERENCE,
         _status: 'unassigned'
     });
-    paperModel.save().then(() => {
+    paperModel.save().then((paper) => {
+        console.log(paper);
         console.log('paper uploaded successfuly');
         res.redirect('/repo')
     }).catch((err) => {
