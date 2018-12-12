@@ -56,6 +56,7 @@ exports.assigning = (req, res) => {
                 for (var j = 0; j < docs.length; j++) {
                     reviewerIDs.push(docs[j]._id);
                 }
+                //deprecated
                 //insert back link of newly inserted reviews._id (s) into the orignal Paper document
                 PaperModel.findOneAndUpdate({
                     _id: paper
