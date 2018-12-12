@@ -73,3 +73,7 @@ exports.assigning = (req, res) => {
         res.redirect('/');
     }
 }
+
+function emailReviewers(reviewers) {
+
+}
