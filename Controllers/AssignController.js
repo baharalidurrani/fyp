@@ -68,6 +68,8 @@ exports.assigning = (req, res) => {
                 });
             }
         });
+
+    //function to be called
     } else {
         console.log('no reviewer selected for assigning');
         res.redirect('/');
