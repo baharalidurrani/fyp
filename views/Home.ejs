@@ -17,12 +17,15 @@
             <%for(var i=0;i<Conferences.length;i++){%>
             <div class="carousel-item">
                 <div class="card marginAll hoverable teal lighten-4">
-                    <div class="card-content">
+                    <div class="card-image">
+                        <img class="responsive-img" src="/img/<%=i%>.jpg">
                         <span class="card-title">
                             <h5>
                                 <%=Conferences[i]._name%>
                             </h5>
-                        </span>
+                        </span> <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
                         <table>
                             <tbody>
                                 <tr>
