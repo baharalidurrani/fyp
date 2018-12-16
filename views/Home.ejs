@@ -10,10 +10,7 @@
 
         <% include ./Layout/Navbar.ejs %>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <!-- <h4 class="themePrimary white-text center">Up Comming Conferences</h4> -->
 
-        <!-- /////////////////////////////////////////////////////// -->
-        <!-- <div class="container carousel carousel-slider center"> -->
         <div class="slider">
             <ul class="slides">
                 <%for(var i=0;i<Conferences.length;i++){%>
@@ -41,54 +38,6 @@
                         <a href="./conference/<%=Conferences[i]._id%>" class="waves-effect waves-light btn pulse">Details</a>
                     </div>
                 </li>
-
-                <!-- <div class="carousel-item">
-                <div>
-                    <div class="card marginAll hoverable teal lighten-4">
-                        <div class="card-image">
-                            <img class="responsive-img" src="/img/<%=i%>.jpg">
-                            <span class="card-title">
-                                <h5>
-                                    <%=Conferences[i]._name%>
-                                </h5>
-                            </span> <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Date to be held:</td>
-                                        <td>
-                                            <%=Conferences[i]._date%>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Papers Submission Deadline:</td>
-
-                                        <td class="red-text">
-                                            <%=Conferences[i]._deadline%>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>Location:</td>
-                                        <td>
-                                            <%=Conferences[i]._location%>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                            <form method="GET" action="/upload">
-                                <div class="center">
-                                    <button type="submit" name="CONFERENCE" value="<%=Conferences[i]._id%>" class="z-depth-0 waves-effect btn waves-light marginAll">Submit
-                                        Paper</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
                 <%}%>
             </ul>
         </div>
