@@ -63,7 +63,7 @@ Router.get('/upload', Auth.islogin, Upload.get);
 Router.post('/upload', Auth.islogin, FileUpload.single('FILENAME'), Upload.post);
 
 Router.get('/conference', Auth.islogin, Conference.get);
-Router.get('/conference/:id', Auth.islogin, Conference.view);
+Router.get('/conference/:id', Conference.view);
 Router.post('/conference', Auth.islogin, Conference.post);
 
 //record reviewer remarks
