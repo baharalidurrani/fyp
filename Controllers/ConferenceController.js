@@ -3,7 +3,6 @@ const ConferenceModel = require('../Models/Conference');
 
 
 exports.get = (req, res) => {
-
     if (req.user._loggedAs === "editor") {
         UserModel.find({
             _rolesApproved: "reviewer"
@@ -34,5 +33,11 @@ exports.post = (req, res) => {
     }).catch((err) => {
         console.log(err);
         res.redirect('/conference');
+    });
+}
+
+exports.view = (req, res) => {
+    ConferenceModel.findById(req.params.id).then((data) => {
+        console.log(data);
     });
 }
