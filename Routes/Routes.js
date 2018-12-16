@@ -67,3 +67,11 @@ Router.post('/conference', Auth.islogin, Conference.post);
 
 //record reviewer remarks
 Router.post('/review', Auth.islogin, Review.post);
+
+
+
+
+//////////////////not found
+Router.all('*', function (req, res) {
+    res.render('NotFound');
+});
