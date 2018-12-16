@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ./Layout/Head.ejs %>
+</head>
+
+<body>
+    <div id="root" class="g9c27b0">
+
+        <% include ./Layout/Navbar.ejs %>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <br>
+        <div class="container">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title center">
+                        <%=Conference._name%></span>
+                </div>
+                <div class="card-content center">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Date to be held:</td>
+                                <td>
+                                    <%=Conference._date%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Papers Submission Deadline:</td>
+
+                                <td class="red-text">
+                                    <%=Conference._deadline%>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Location:</td>
+                                <td>
+                                    <%=Conference._location%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-content">
+                    <%if(Conference.user_loggedAs=='author'){%>
+                    <form method="GET" action="/upload">
+                        <div class="center">
+                            <button type="submit" name="CONFERENCE" value="<%=Conference._id%>" class="z-depth-0 waves-effect btn waves-light">Submit
+                                Paper</button>
+                        </div>
+                    </form>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% include ./Layout/Footer.ejs %>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <% include ./Layout/ScriptTag.ejs %>
+
+</body>
+
+</html>

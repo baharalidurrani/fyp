@@ -38,6 +38,15 @@ exports.post = (req, res) => {
 
 exports.view = (req, res) => {
     ConferenceModel.findById(req.params.id).then((data) => {
-        console.log(data);
+        if (req.user)
+            data.user_loggedAs = req.user._loggedAs;
+        data._reviewers = null;
+
+        res.render('ConferenceView', {
+            Conference: data
+        });
+    }).catch((err) => {
+        console.log(err);
+        res.redirect('/');
     });
 }
