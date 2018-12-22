@@ -11,9 +11,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const URI = process.env.MLAB || 'mongodb://localhost:27017/fypPractice';
 
-//server listing on port 3000
+//start web server
 app.listen(port, () => {
-    console.log(`server listing on port ${port}`);
+    console.log(`Server listening on port ${port}`);
 });
 
 //connection with mongoose
