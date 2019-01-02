@@ -11,6 +11,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const URI = process.env.MLAB || 'mongodb://localhost:27017/fypPractice';
 
+//if using the local .env
+//then start the server using this command:
+//env $(cat .env) nodemon
+
 //start web server
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
