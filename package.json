@@ -18,7 +18,7 @@
   },
   "homepage": "https://gitlab.com/baharalidurrani/fyp#readme",
   "dependencies": {
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "connect-mongo": "^2.0.3",
     "ejs": "^2.6.1",
