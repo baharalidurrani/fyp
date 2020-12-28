@@ -9,7 +9,7 @@ require('./config/passport_config');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const URI = process.env.MLAB || 'mongodb://localhost:27017/fypPractice';
+const URI = process.env.URI || 'mongodb://localhost:27017/fyp';
 
 //if using the local .env
 //then start the server using this command:
@@ -23,9 +23,11 @@ app.listen(port, () => {
 //connection with mongoose
 mongoose.Promise = global.Promise;
 mongoose.connect(URI, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 }).then(() => {
-    console.log('Database Connnected');
+    console.log('Database Connected');
 }).catch((err) => {
     console.log(err);
 });
@@ -43,7 +45,7 @@ app.use(body_parser.urlencoded({
 
 //session middleware
 app.use(session({
-    secret: 'secrestkey',
+    secret: 'secretKey',
     resave: true,
     saveUninitialized: false,
     store: new Mongostore({
