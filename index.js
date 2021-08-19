@@ -18,6 +18,7 @@ const URI = process.env.URI || 'mongodb://localhost:27017/fyp';
 //start web server
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
+    console.log(`http://127.0.0.1:${port}`);
 });
 
 //connection with mongoose

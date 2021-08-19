@@ -54,46 +54,46 @@
         </div>
     </div>
 </nav>
+<main>
+    <div class="container">
+        <ul class="sidenav" id="mobile-demo">
+            <li><a class="center" href="https://cmsfyp.herokuapp.com/">
+                    <img src="/img/cms.svg" alt="" height="100%" class="brand-logo">
+                </a></li>
+            <div class="divider"></div>
+            <li><a class="waves-effect waves-teal" href="../">Home</a></li>
+            <li><a class="waves-effect waves-teal" href="../repo">Paper Repo</a></li>
+            <% if(!person) { %>
+            <li><a class="waves-effect waves-teal" href="../login">Login</a></li>
+            <li><a class="waves-effect waves-teal" href="../register">Register</a></li>
+            <% } else { %>
+            <% if(person._loggedAs=='editor') { %>
+            <li><a class="waves-effect waves-teal" href="../conference">Conference</a></li>
+            <li><a class="waves-effect waves-teal" href="../approval">User Approval</a></li>
+            <% } %>
+            <% if(person._loggedAs=='author') { %>
+            <li><a class="waves-effect waves-teal" href="../upload">Upload Paper</a></li>
+            <% } %>
+            <li><a class="waves-effect waves-teal" href="../profile">
+                    <%=person._name%> As
+                    <%=person._loggedAs%></a></li>
+            <!-- Modal Trigger -->
+            <li><a class="waves-effect waves-teal modal-trigger" href="#modal2">Logout</a></li>
+            <% } %>
 
-<div class="container">
-    <ul class="sidenav" id="mobile-demo">
-        <li><a class="center" href="https://cmsfyp.herokuapp.com/">
-                <img src="/img/cms.svg" alt="" height="100%" class="brand-logo">
-            </a></li>
-        <div class="divider"></div>
-        <li><a class="waves-effect waves-teal" href="../">Home</a></li>
-        <li><a class="waves-effect waves-teal" href="../repo">Paper Repo</a></li>
-        <% if(!person) { %>
-        <li><a class="waves-effect waves-teal" href="../login">Login</a></li>
-        <li><a class="waves-effect waves-teal" href="../register">Register</a></li>
-        <% } else { %>
-        <% if(person._loggedAs=='editor') { %>
-        <li><a class="waves-effect waves-teal" href="../conference">Conference</a></li>
-        <li><a class="waves-effect waves-teal" href="../approval">User Approval</a></li>
-        <% } %>
-        <% if(person._loggedAs=='author') { %>
-        <li><a class="waves-effect waves-teal" href="../upload">Upload Paper</a></li>
-        <% } %>
-        <li><a class="waves-effect waves-teal" href="../profile">
-                <%=person._name%> As
-                <%=person._loggedAs%></a></li>
-        <!-- Modal Trigger -->
-        <li><a class="waves-effect waves-teal modal-trigger" href="#modal2">Logout</a></li>
-        <% } %>
-
-        <li><a onclick="changeThemeClose('#ee6e73')" class="btn red lighten-2 z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#4caf50')" class="btn green z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#e91e63')" class="btn pink z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#2196f3')" class="btn blue z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#9c27b0')" class="btn purple z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#009688')" class="btn teal z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#3f51b5')" class="btn indigo z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#607d8b')" class="btn blue-grey z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#00bcd4')" class="btn cyan z-depth-0"></a></li>
-        <li><a onclick="changeThemeClose('#f44336')" class="btn red z-depth-0"></a></li>
-    </ul>
-</div>
-<!-- Modal Structure -->
-<div id="modal2" class="modal themePrimary">
-    <a href="../logout" class="themePrimary waves-effect waves-light btn-large fullh fullw">Confirm Logout?</a>
-</div>
+            <li><a onclick="changeThemeClose('#ee6e73')" class="btn red lighten-2 z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#4caf50')" class="btn green z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#e91e63')" class="btn pink z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#2196f3')" class="btn blue z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#9c27b0')" class="btn purple z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#009688')" class="btn teal z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#3f51b5')" class="btn indigo z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#607d8b')" class="btn blue-grey z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#00bcd4')" class="btn cyan z-depth-0"></a></li>
+            <li><a onclick="changeThemeClose('#f44336')" class="btn red z-depth-0"></a></li>
+        </ul>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal themePrimary">
+        <a href="../logout" class="themePrimary waves-effect waves-light btn-large fullh fullw">Confirm Logout?</a>
+    </div>
