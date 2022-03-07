@@ -1,0 +1,21 @@
+abstract: "Conference Management System, for uploading graduate research papers."
+authors:
+  - family-names: Ali
+    given-names: Bahar
+    name-particle: Durrani
+    orcid: "https://orcid.org/0000-0003-2750-4420"
+cff-version: "1.1.0"
+date-released: 2021-03-07
+doi: "10.5281/zenodo.6335523"
+keywords:
+  - express
+  - node
+  - mongodb
+  - mongoose
+  - ejs
+  - materializecss
+license: "GPL-3.0"
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/baharalidurrani/fyp"
+title: "baharalidurrani/fyp: v1.1.0"
+version: "v1.1.0"
